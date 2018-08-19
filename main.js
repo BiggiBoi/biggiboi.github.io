@@ -75,7 +75,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".app-footer {\r\n    flex: 0 0 auto;\r\n}\r\n.content{\r\n    flex: 1 0 auto;\r\n}\r\nfooter>.mat-toolbar-row, .mat-toolbar-single-row{\r\n    height: 32px;\r\n}\r\n.footer-space{\r\n    flex: 1 1 auto;\r\n}\r\n.footer-text{\r\n    font: 500 15px/32px Roboto,\"Helvetica Neue\",sans-serif !important;\r\n}\r\n.app-title{\r\n    cursor: pointer;\r\n}"
+module.exports = ".content{\r\n    margin: 10px;\r\n}\r\nheader{\r\n    flex: 0 0 auto;\r\n}"
 
 /***/ }),
 
@@ -86,7 +86,7 @@ module.exports = ".app-footer {\r\n    flex: 0 0 auto;\r\n}\r\n.content{\r\n    
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\">\n    <mat-toolbar-row>\n      <span class=\"app-title\" mat-button routerLink='/' routerLinkActive=\"active\">{{title}}</span>\n      <a mat-button routerLink='/orthodict' routerLinkActive=\"active\">Генератор ударений</a>\n    </mat-toolbar-row>\n</mat-toolbar>\n<div class=\"content\">\n  <router-outlet></router-outlet>\n</div>\n<footer class=\"app-footer\">\n  <mat-toolbar color=\"primary\">\n    <span class=\"footer-space\"></span>\n    <span class=\"footer-text\">Первушин П.В.</span>\n  </mat-toolbar>\n</footer>"
+module.exports = "<header fxLayout=\"row\">\n  <mat-toolbar color=\"primary\">\n      <mat-toolbar-row>\n        <nav>\n            <a mat-button routerLink='/' routerLinkActive=\"active\">Главная</a>\n            <a mat-button routerLink='/orthodict' routerLinkActive=\"active\">Генератор ударений</a>\n        </nav>\n      </mat-toolbar-row>\n  </mat-toolbar>\n</header>\n<div class=\"content\" fxLayout=\"column\" style=\"flex:1 0 auto\">\n  <router-outlet></router-outlet>\n</div>\n<footer fxLayout=\"row\"  style=\"flex:0 0 auto\">\n  <mat-toolbar color=\"primary\">\n    Первушин П.В.\n  </mat-toolbar>\n</footer>"
 
 /***/ }),
 
@@ -139,11 +139,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! .//app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _orthodict_orthodict_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./orthodict/orthodict.component */ "./src/app/orthodict/orthodict.component.ts");
-/* harmony import */ var _material_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! .//material.module */ "./src/app/material.module.ts");
+/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! .//app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _orthodict_orthodict_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./orthodict/orthodict.component */ "./src/app/orthodict/orthodict.component.ts");
+/* harmony import */ var _material_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! .//material.module */ "./src/app/material.module.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -158,24 +159,26 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"],
-                _orthodict_orthodict_component__WEBPACK_IMPORTED_MODULE_6__["OrthodictComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
+                _home_home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"],
+                _orthodict_orthodict_component__WEBPACK_IMPORTED_MODULE_7__["OrthodictComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
-                _material_module__WEBPACK_IMPORTED_MODULE_7__["MaterialModule"]
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
+                _material_module__WEBPACK_IMPORTED_MODULE_8__["MaterialModule"],
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_3__["FlexLayoutModule"]
             ],
             providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -276,10 +279,18 @@ var MaterialModule = /** @class */ (function () {
     MaterialModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             imports: [
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCardModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSelectModule"]
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatToolbarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCardModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSelectModule"]
             ],
             exports: [
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCardModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSelectModule"]
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatToolbarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCardModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSelectModule"]
             ]
         })
     ], MaterialModule);
@@ -297,7 +308,7 @@ var MaterialModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".orhodict-styled{\r\n    display: flex;\r\n    flex-direction: row;\r\n    margin: 8px;\r\n    align-items: center;\r\n    align-content: center;\r\n    justify-content: center;\r\n}\r\n.column{\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n.orhodict-card{\r\n    margin: 10px;\r\n}\r\n.orcho-button{\r\n    margin: 5px;\r\n}\r\n.orcho-save{\r\n    margin: 6.5px !important;\r\n}"
+module.exports = ".words-list{\r\n    margin-top: 20px;\r\n}"
 
 /***/ }),
 
@@ -308,7 +319,7 @@ module.exports = ".orhodict-styled{\r\n    display: flex;\r\n    flex-direction:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class='orhodict-styled'>\n  <mat-card class=\"orhodict-card\">\n    <mat-card-title>Класс</mat-card-title>\n    <mat-card-content>\n      <mat-form-field>\n        <mat-select [(value)]=\"SelectClass\">\n          <mat-option value=\"1\">1 класс</mat-option>\n          <mat-option value=\"2\">2 класс</mat-option>\n          <mat-option value=\"3\">3 класс</mat-option>\n          <mat-option value=\"4\">4 класс</mat-option>\n          <mat-option value=\"5\">Все классы</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <button mat-stroked-button color=\"primary\" class=\"orcho-button\" (click)='edit()'>Изменить</button>\n    </mat-card-content>\n  </mat-card>\n  <mat-card class=\"orhodict-card\">\n    <mat-card-title>Количество слов</mat-card-title>\n    <mat-card-content>\n      <mat-form-field>\n        <mat-select [(value)]=\"SelectAmountWords\">\n            <mat-option value=\"15\">15 слов</mat-option>\n            <mat-option value=\"30\">30 слов</mat-option>\n            <mat-option value=\"50\">50 слов</mat-option>\n            <mat-option value=\"100\">100 слов</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <button mat-stroked-button color=\"primary\" class=\"orcho-button\" (click)='edit()'>Изменить</button>\n    </mat-card-content>\n  </mat-card>\n  <mat-card class=\"orhodict-card\">\n    <mat-card-title>Готовое задание</mat-card-title>\n      <mat-card-content>\n        <div class=\"orcho-save\">\n        <button mat-stroked-button color=\"primary\" class=\"orcho-button\">Скачать</button>\n        <button mat-stroked-button color=\"primary\" class=\"orcho-button\">Распечать</button>\n        <button mat-stroked-button color=\"primary\" class=\"orcho-button\" (click)='resetForm()'>Сбросить</button>\n        </div>\n      </mat-card-content>\n  </mat-card>\n</div>\n<div *ngIf='editable' class='orhodict-styled'>\n  <mat-card class=\"orhodict-card\">\n    <mat-card-title>Для детей</mat-card-title>\n    <mat-card-content>\n      <ul *ngFor='let dat of wordsForPupil'>\n        <li>{{dat}}</li>\n      </ul>\n    </mat-card-content>\n  </mat-card>\n  <mat-card class=\"orhodict-card\">\n    <mat-card-title>Для родителей</mat-card-title>\n    <mat-card-content>\n      <ul *ngFor='let d of wordsForParent'>\n        <li>{{d}}</li>\n      </ul>\n    </mat-card-content>\n  </mat-card>\n</div>\n"
+module.exports = "<div fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayout.xs=\"column\" fxLayoutGap=\"20px\">\n  <mat-card>\n    <mat-card-title>Класс</mat-card-title>\n    <mat-card-content fxLayout=\"row\" fxLayout.lt-md=\"column\" fxLayoutGap=\"5px\">\n      <mat-form-field fxFlex>\n        <mat-select [(value)]=\"SelectClass\">\n          <mat-option value=\"1\">1 класс</mat-option>\n          <mat-option value=\"2\">2 класс</mat-option>\n          <mat-option value=\"3\">3 класс</mat-option>\n          <mat-option value=\"4\">4 класс</mat-option>\n          <mat-option value=\"5\">Все классы</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <button fxFlex=\"basis\" fxFlexAlign=\"center\" fxFlexAlign.lt-md=\"end\" mat-stroked-button color=\"primary\" (click)='edit()'>Изменить</button>\n    </mat-card-content>\n  </mat-card>\n\n  <mat-card> \n    <mat-card-title>Количество</mat-card-title>\n    <mat-card-content fxLayout=\"row\" fxLayout.lt-md=\"column\" fxLayoutGap=\"5px\">\n      <mat-form-field fxFlex>\n        <mat-select [(value)]=\"SelectAmountWords\">\n            <mat-option value=\"15\">15 слов</mat-option>\n            <mat-option value=\"30\">30 слов</mat-option>\n            <mat-option value=\"50\">50 слов</mat-option>\n            <mat-option value=\"100\">100 слов</mat-option>\n        </mat-select>\n      </mat-form-field>\n      <button fxFlex=\"basis\" fxFlexAlign=\"center\" fxFlexAlign.lt-md=\"end\" mat-stroked-button color=\"primary\" (click)='edit()'>Изменить</button>\n    </mat-card-content>\n  </mat-card>\n\n  <mat-card>\n    <mat-card-title>Готовое задание</mat-card-title>\n      <mat-card-content fxLayout=\"column\" fxLayoutGap=\"5px\">\n        <div fxLayout=\"row\">\n          <button fxFlex=\"50%\" mat-stroked-button color=\"primary\">Скачать</button>\n          <button fxFlex=\"50%\" fxFlexOffset=\"5px\" mat-stroked-button color=\"primary\">Распечать</button>\n        </div>\n        <div fxLayout=\"row\">\n            <button fxFlex=\"50%\" mat-stroked-button color=\"primary\" (click)='resetForm()'>Сбросить</button>\n        </div>\n      </mat-card-content>\n  </mat-card>\n</div>\n\n<div class=\"words-list\" *ngIf='editable' fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayoutGap=\"10px\">\n  <mat-card>\n    <mat-card-title>Для детей</mat-card-title>\n    <mat-card-content *ngFor='let forPupil of wordsForPupil'>\n      <div fxLayout=\"row\" fxLayoutAlign=\"center\">{{forPupil}}</div>\n    </mat-card-content>\n  </mat-card>\n  <mat-card>\n    <mat-card-title>Для родителей</mat-card-title>\n    <mat-card-content *ngFor='let forParents of wordsForParent'>\n      <div fxLayout=\"row\" fxLayoutAlign=\"center\">{{forParents}}</div>\n    </mat-card-content>\n  </mat-card>\n</div>\n"
 
 /***/ }),
 
