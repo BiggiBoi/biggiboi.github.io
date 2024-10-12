@@ -57,6 +57,8 @@
             //w = window.Telegram.WebApp;
             ///h.textContent(w.WebAppUser.username());
             var WebApp = window.Telegram.WebApp;
+            WebApp.ready();
+            console.log(WebApp.WebAppUser.username);
             WebApp.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
         </script>
 	</body>
