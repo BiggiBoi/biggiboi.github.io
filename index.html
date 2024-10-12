@@ -9,9 +9,6 @@
 		<title>LiClick</title>
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
 		<link rel="stylesheet" href="assets/css/style.css">
-        <script>
-            console.log(window.Telegram.WebApp.initDataUnsafe())
-        </script>
 	</head>
 	<body>
         <div class="squad-container"></div>
@@ -55,5 +52,10 @@
             </a>
         </div>
         <script src="assets/js/main.js"></script>
+        <script>
+            h = document.querySelector('h3');
+            w = window.Telegram.WebApp;
+            h.textContent(w.WebAppUser.username());
+        </script>
 	</body>
 </html>
