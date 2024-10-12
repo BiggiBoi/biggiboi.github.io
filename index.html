@@ -53,11 +53,9 @@
         </div>
         <script src="assets/js/main.js"></script>
         <script>
-            //h = document.querySelector('h3');
-            //w = window.Telegram.WebApp;
-            ///h.textContent(w.WebAppUser.username());
-            var WebApp = window.Telegram.WebApp;
+            var app = window.Telegram.WebApp;
             WebApp.ready();
+            app = expand();
             console.log(window.Telegram.WebApp.platform);
             WebApp.showAlert(`Добро пожаловать, @${window.Telegram.WebApp.WebAppUser.id}.`);
         </script>
