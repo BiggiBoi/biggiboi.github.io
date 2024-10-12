@@ -73,10 +73,6 @@ body{
 .rank-items h3 {
     margin-right: 0.5rem;
 }
-.coin-container img {
-    max-width: 300px;
-    height: auto;
-}
 .slide-fwd-center {
 	animation: slide-fwd-center 0.15s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }

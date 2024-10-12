@@ -54,32 +54,21 @@ image.addEventListener('click' , (e)=> {
     } 
 
     if(x < 150 & y < 150){
-        image.style.transform = 'translate(-0.25rem, -0.25rem) skewY(-10deg) skewX(5deg)';
+        image.style.transform = 'translate(-0.25rem, -0.25rem) scale(0.95) skewY(-5deg) skewX(5deg)';
     }
     else if (x < 150 & y > 150){
-        image.style.transform = 'translate(-0.25rem, 0.25rem) skewY(-10deg) skewX(5deg)';
+        image.style.transform = 'translate(-0.25rem, 0.25rem) scale(0.95) skewY(-5deg) skewX(5deg)';
     }
     else if (x > 150 & y > 150){
-        image.style.transform = 'translate(0.25rem, 0.25rem) skewY(10deg) skewX(-5deg)';
+        image.style.transform = 'translate(0.25rem, 0.25rem) scale(0.95) skewY(5deg) skewX(-5deg)';
     }
     else if (x > 150 & y < 150){
-        image.style.transform = 'translate(0.25rem, -0.25rem) skewY(10deg) skewX(-5deg)';
+        image.style.transform = 'translate(0.25rem, -0.25rem) scale(0.95) skewY(5deg) skewX(-5deg)';
     }
 
-
     setTimeout(()=>{
-        image.style.transform = 'translate(0px, 0px)';
+        image.style.transform = 'translate(0px, 0px) scale(1)';
     }, 100);
 
     body.querySelector('.progress').style.width = `${(100 * power) / total}%`;
 });
-
-setInterval(()=> {
-    count = localStorage.getItem('count')
-    power = localStorage.getItem('power');
-    if(Number(total) > power){
-        localStorage.setItem('power' , `${Number(power) + Number(count)}`);
-        body.querySelector('#power').textContent = `${Number(power) + Number(count)}`;
-        body.querySelector('.progress').style.width = `${(100 * power) / total}%`;
-    }
-}, 1000);
