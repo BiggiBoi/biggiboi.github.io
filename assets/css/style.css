@@ -73,19 +73,6 @@ body{
 .rank-items h3 {
     margin-right: 0.5rem;
 }
-.slide-fwd-center {
-	animation: slide-fwd-center 0.15s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-@keyframes slide-fwd-center {
-    0% {
-        transform: translateZ(0);
-        transform: scale(1.0);
-      }
-      100% {
-        transform: translateZ(50px);
-        transform: scale(0.95);
-      }
-  }
 .power {
     display: flex;
     justify-content: center;
@@ -104,6 +91,11 @@ body{
 .gray {
     color: #d7d7d798 !important;
     font-size: 0.75rem !important;
+}
+#coin{
+    transition: .1s;
+    transform-style: preserve-3d;
+    user-select: none;
 }
 .progress-bar {
     display: flex;
@@ -135,11 +127,13 @@ body{
 }
 .button img {
     margin-top: 0.5rem;
+    user-select: none;
 }
 .button span {
     margin-top: 0.25rem;
     font-weight: bold;
     color: #ffffff;
+    user-select: none;
 }
 a {
     text-decoration: none;

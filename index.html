@@ -40,22 +40,24 @@
         <div class="menu-container">
             <a href="#" class="button b-r">
                 <img src="assets/img/cup.png" alt width="28px"/>
-                <span class="select-none">Лидерборд</span>
+                <span>Лидерборд</span>
             </a>
             <a href="#" class="button b-r">
                 <img src="assets/img/meeting.png" alt width="28px"/>
-                <span class="select-none">Клан</span>
+                <span>Клан</span>
             </a>
             <a href="#" class="button">
                 <img src="assets/img/gift.png" alt width="28px"/>
-                <span class="select-none">Скоро</span>
+                <span>Скоро</span>
             </a>
         </div>
         <script src="assets/js/main.js"></script>
         <script>
-            h = document.querySelector('h3');
-            w = window.Telegram.WebApp;
-            h.textContent(w.WebAppUser.username());
+            //h = document.querySelector('h3');
+            //w = window.Telegram.WebApp;
+            ///h.textContent(w.WebAppUser.username());
+            var WebApp = window.Telegram.WebApp;
+            WebApp.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
         </script>
 	</body>
 </html>
