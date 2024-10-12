@@ -73,7 +73,7 @@ body{
 .rank-items h3 {
     margin-right: 0.5rem;
 }
-.coin{
+.coin-container img {
     max-width: 300px;
     height: auto;
 }
