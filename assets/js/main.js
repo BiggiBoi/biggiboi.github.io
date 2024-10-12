@@ -72,3 +72,13 @@ image.addEventListener('click' , (e)=> {
 
     body.querySelector('.progress').style.width = `${(100 * power) / total}%`;
 });
+
+setInterval(()=> {
+    count = localStorage.getItem('count')
+    power = localStorage.getItem('power');
+    if(Number(total) > power){
+        localStorage.setItem('power' , `${Number(power) + Number(count)}`);
+        body.querySelector('#power').textContent = `${Number(power) + Number(count)}`;
+        body.querySelector('.progress').style.width = `${(100 * power) / total}%`;
+    }
+}, 1000);
