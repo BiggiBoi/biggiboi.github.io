@@ -6,14 +6,15 @@
 		<title>Qlyuker</title>
         <link rel="stylesheet" href="httpss://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="style.css">
-        <script src="my.js"></script>
+		<link rel="stylesheet" href="assets/css/style.css">
+        <script src="assets/js/main.js"></script>
 	</head>
 
 	<body>
         <div class="squad-container"></div>
         <div class="coin-counter-conteiner">
-            <h1>100</h1>
+            <img src="assets/img/coin-counter.png"/ width="45px">
+            <h1>0</h1>
         </div>
         <div class="rank-container">
             <div class="rank-items">
@@ -21,12 +22,12 @@
             </div>
         </div>
         <div class="coin-container">
-            <img class="coin" src="gerbb.png"/>
+            <img class="coin" src="assets/img/coin.png"/>
             </div>
         </div>
         <div class="power-container">
             <div class="power">
-                <img src="thunder.png" width="40px">
+                <img src="assets/img/lightning.png" width="40px">
                 <div class="power-count">
                     <span id="power" class="select-none">500</span>
                     <span class="gray select-none" id="total">/500</span>
@@ -37,9 +38,18 @@
             </div>
         </div>
         <div class="menu-container">
-            <a href="#" class="button b-r">1</a>
-            <a href="#" class="button b-r">2</a>
-            <a href="#" class="button b-r">3</a>
+            <a href="#" class="button b-r">
+                <img src="assets/img/cup.png" alt width="28px"/>
+                <span class="select-none">Лидерборд</span>
+            </a>
+            <a href="#" class="button b-r">
+                <img src="assets/img/meeting.png" alt width="28px"/>
+                <span class="select-none">Клан</span>
+            </a>
+            <a href="#" class="button">
+                <img src="assets/img/gift.png" alt width="28px"/>
+                <span class="select-none">Скоро</span>
+            </a>
         </div>
 	</body>
 </html>
