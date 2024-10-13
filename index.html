@@ -59,8 +59,8 @@
             let app = Telegram.WebApp;
             app.ready();
             app.expand();
-            console.log(app.WebAppInitData);
-            app.showAlert(`Добро пожаловать, @${app.WebAppUser.id}.`);
+            app.enableClosingConfirmation()
+            console.log(app.initDataUnsafe.user.usernam);
         </script>
 	<!-- Eruda is console for mobile browsers -->
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
