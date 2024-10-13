@@ -13,7 +13,7 @@
 	<body>
         <div class="squad-container">
             <img class="avatar" src="https://unavatar.io/telegram/BiggiBoi?fallback=false"/>
-            <span class="nickname">Biggi</span>
+            <span class="nickname"></span>
         </div>
         <div class="coin-counter-conteiner">
             <img src="assets/img/coin-counter.png" width="45px"/>
@@ -60,7 +60,9 @@
             app.ready();
             app.expand();
             app.enableClosingConfirmation()
-            console.log(app.initDataUnsafe.user.username);
+            nick = document.querySelector('.nickname');
+            nick.innerText = `${tg.initDataUnsafe.username}`
+            console.log(app.initDataUnsafe.user.id);
         </script>
 	<!-- Eruda is console for mobile browsers -->
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
