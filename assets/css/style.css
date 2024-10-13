@@ -72,6 +72,7 @@ body{
     font-size: 1rem;
     line-height: 1.5rem;
     letter-spacing: -.01em;
+    font-weight: bold;
     color: #ffffff;
 }
 .coin-counter-conteiner img {

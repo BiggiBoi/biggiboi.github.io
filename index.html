@@ -60,6 +60,7 @@
             app.ready();
             app.expand();
             app.enableClosingConfirmation()
+            console.log(app.WebAppAppUser);
             nick = document.querySelector('.nickname');
             nick.innerText = `${app.initDataUnsafe.user.username}`
             console.log(app.initDataUnsafe.user.id);
