@@ -12,6 +12,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background: radial-gradient(circle, rgba(149, 166, 170, 1) 0%, rgba(132, 155, 196, 1) 15%, rgb(0, 0, 0) 75%);
+    user-select: none;
 }
 .squad-container {
     display: flex;
@@ -59,6 +60,19 @@ body{
     background-color: rgba(218, 218, 218, 0.2);
     border: 2px solid rgba(218, 218, 218, 0.03);
     border-radius: 15px;
+}
+.avatar{
+    height: 36px;
+    width: 36px;
+    border-radius: 9999px;
+    user-select: none;
+    margin-right: 0.5rem;
+}
+.nickname{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: -.01em;
+    color: #ffffff;
 }
 .coin-counter-conteiner img {
     margin-right: 1rem;
