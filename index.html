@@ -61,8 +61,9 @@
             app.expand();
             app.enableClosingConfirmation()
             nick = document.querySelector('.nickname');
-            nick.innerText = `${app.initDataUnsafe.username}`
+            nick.innerText = `${app.initDataUnsafe.user.username}`
             console.log(app.initDataUnsafe.user.id);
+            console.log(app.initDataUnsafe.user.photo_url);
         </script>
 	<!-- Eruda is console for mobile browsers -->
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
