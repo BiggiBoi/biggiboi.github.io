@@ -167,3 +167,8 @@ a {
 a:active {
     color: rgba(241,158,54,1);
 }
+.haeder {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
