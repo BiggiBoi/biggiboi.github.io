@@ -3,11 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-html{
-    font-family: sans-serif;
-}
 body{
-    min-height: 100hv;
+    min-height: 100%;
+    font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif;
     background-color: #191919 !important;
     background-size: 450px;
     background-position: center;
@@ -27,11 +25,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2.25rem;
+    margin-top: 1.75rem;
 }
 .rank-container {
     margin-top: 1rem;
-    margin-bottom: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,10 +36,17 @@ body{
 }
 .coin-container {
     position: relative;
-    margin-top: 1.5rem;
+    margin-top: 1.75rem;
     width: 100%;
     display: flex;
     justify-content: center;
+}
+.power-container{
+    margin-top: 1.75rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 .menu-container {
     margin: 1.75rem;
@@ -54,12 +58,9 @@ body{
     border: 2px solid rgba(218, 218, 218, 0.03);
     border-radius: 15px;
 }
-.power-container{
-    margin-top: 2.25rem;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+.coin-counter-conteiner img {
+    margin-right: 1rem;
+    width: 50px;
 }
 .coin-counter-conteiner h1 {
     color: #ffffff;
@@ -70,8 +71,14 @@ body{
     align-items: center;
     font-size: 1.25rem;
 }
-.rank-items h3 {
-    margin-right: 0.5rem;
+#coin{
+    transition: .1s;
+    transform-style: preserve-3d;
+    user-select: none;
+    width: 300px;
+    height: 300px;
+    background: url('../img/coin.png') no-repeat center center;
+    background-size: contain;
 }
 .power {
     display: flex;
@@ -92,11 +99,7 @@ body{
     color: #d7d7d798 !important;
     font-size: 0.75rem !important;
 }
-#coin{
-    transition: .1s;
-    transform-style: preserve-3d;
-    user-select: none;
-}
+
 .progress-bar {
     display: flex;
     width: 67%;
@@ -140,8 +143,4 @@ a {
 }
 a:active {
     color: rgba(241,158,54,1);
-}
-.coin-counter-conteiner img {
-    margin-right: 1rem;
-    width: 50px;
 }
