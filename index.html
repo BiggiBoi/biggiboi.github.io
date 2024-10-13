@@ -57,7 +57,7 @@
             let app = Telegram.WebApp;
             app.ready();
             app.expand();
-            console.log(app.WebAppUser.username);
+            console.log(app.WebAppInitData);
             app.showAlert(`Добро пожаловать, @${app.WebAppUser.id}.`);
         </script>
 	<!-- Eruda is console for mobile browsers -->
