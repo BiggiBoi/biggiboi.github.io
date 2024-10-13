@@ -53,9 +53,9 @@
         </div>
         <script src="assets/js/main.js"></script>
         <script>
-            var app = window.Telegram.WebApp;
-            WebApp.ready();
-            app = expand();
+            let app = Telegram.WebApp;
+            app.ready();
+            app.expand();
             console.log(window.Telegram.WebApp.platform);
             WebApp.showAlert(`Добро пожаловать, @${window.Telegram.WebApp.WebAppUser.id}.`);
         </script>
