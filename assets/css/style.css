@@ -62,11 +62,19 @@ body{
     border-radius: 15px;
 }
 .avatar{
-    height: 36px;
-    width: 36px;
-    border-radius: 9999px;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgb(16, 16, 16);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: rgba(151, 151, 151, 0.773);
     user-select: none;
     margin-right: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: -.1em;
 }
 .nickname{
     font-size: 1rem;

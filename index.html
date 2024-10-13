@@ -12,7 +12,7 @@
 	</head>
 	<body>
         <div class="squad-container">
-            <img class="avatar" src="https://unavatar.io/telegram/BiggiBoi?fallback=false"/>
+            <span class="avatar">11Б</span>
             <span class="nickname"></span>
         </div>
         <div class="coin-counter-conteiner">
@@ -41,11 +41,11 @@
             </div>
         </div>
         <div class="menu-container">
-            <a href="#" class="button b-r">
+            <a href="/leaderboard.html" class="button b-r">
                 <img src="assets/img/cup.png" alt width="28px"/>
                 <span>Лидерборд</span>
             </a>
-            <a href="#" class="button b-r">
+            <a href="/class.html" class="button b-r">
                 <img src="assets/img/meeting.png" alt width="28px"/>
                 <span>Клан</span>
             </a>
@@ -63,8 +63,6 @@
             console.log(app.initDataUnsafe);
             nick = document.querySelector('.nickname');
             nick.innerText = `${app.initDataUnsafe.user.username}`
-            console.log(app.initDataUnsafe.user.id);
-            console.log(app.initDataUnsafe.user.photo_url);
         </script>
 	<!-- Eruda is console for mobile browsers -->
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
