@@ -24,7 +24,8 @@
             let app = Telegram.WebApp;
             app.ready();
             app.expand();
-            app.enableClosingConfirmation()
+            app.BackButton.show();
+            app.enableClosingConfirmation();
             console.log(app.initDataUnsafe);
             nick = document.querySelector('.nickname');
             nick.innerText = `${app.initDataUnsafe.user.username}`
