@@ -25,8 +25,8 @@
             app.ready();
             app.expand();
             app.BackButton.show();
-            BackButton.onClick(function() {
-                history.back()
+            app.BackButton.onClick(function() {
+                history.back();
                 BackButton.hide();
             });
             app.enableClosingConfirmation();
