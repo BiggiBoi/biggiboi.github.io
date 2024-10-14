@@ -25,6 +25,10 @@
             app.ready();
             app.expand();
             app.BackButton.show();
+            BackButton.onClick(function() {
+                history.back()
+                BackButton.hide();
+            });
             app.enableClosingConfirmation();
             console.log(app.initDataUnsafe);
             nick = document.querySelector('.nickname');
