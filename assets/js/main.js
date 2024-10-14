@@ -34,6 +34,10 @@ if(count == null){
     localStorage.setItem('count' , '1')
 }
 
+window.addEventListener('unload', function(){
+    localStorage.setItem('coins' , '0');
+});
+
 image.addEventListener('click' , (e)=> {
 
     let x = e.offsetX;
