@@ -18,7 +18,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 4.5rem;
+    /*height: 4.5rem;*/
     border-radius: 15px;
     background-color: rgba(50, 49, 49, 0.3);
     border: 2px solid rgb(43, 42, 42, 0.05);
@@ -28,7 +28,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1.75rem;
+    margin-top: 1.25rem;
 }
 .rank-container {
     margin-top: 1rem;
@@ -39,20 +39,20 @@ body{
 }
 .coin-container {
     position: relative;
-    margin-top: 1.75rem;
+    margin-top: 1.25rem;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 .power-container{
-    margin-top: 1.75rem;
+    margin-top: 1.25rem;
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
 }
 .menu-container {
-    margin-top: 1.75rem;
+    margin-top: 1.25rem;
     display: flex;
     height: 5rem;
     justify-content: center;
