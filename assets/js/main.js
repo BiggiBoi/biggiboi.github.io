@@ -5,7 +5,8 @@ const h1 = body.querySelector('h1');
 let coins = localStorage.getItem('coins');
 let total = localStorage.getItem('total');
 let power = localStorage.getItem('power');
-let count = localStorage.getItem('count')
+let count = localStorage.getItem('count');
+let taps = 0;
 
 if(coins == null){
     localStorage.setItem('coins' , '0');
@@ -37,9 +38,16 @@ if(count == null){
 window.addEventListener('unload', function(){
     localStorage.setItem('coins' , '0');
 });
-
+timerID=0;
+function t(){
+    timerID = setTimeout(()=>{
+        console.log('Нажатий'+taps);
+        taps = 0;
+    },1000);
+}
 image.addEventListener('click' , (e)=> {
 
+    clearTimeout(timerID);
     let x = e.offsetX;
     let y = e.offsetY;
 
@@ -73,6 +81,8 @@ image.addEventListener('click' , (e)=> {
     setTimeout(()=>{
         image.style.transform = 'translate(0px, 0px) scale(1)';
     }, 100);
+    taps = taps+1
+    t();
 
     body.querySelector('.progress').style.width = `${(100 * power) / total}%`;
 });
