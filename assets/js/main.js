@@ -1,12 +1,59 @@
+const app = Telegram.WebApp;
 const body = document.body;
 const image = body.querySelector('#coin');
 const h1 = body.querySelector('h1');
+const current_power = body.querySelector('#power')
+const total_power = body.querySelector('#total')
+const avatar = body.querySelector('.avatar')
+const nickname = body.querySelector('.nickname')
+
+app.ready();
+app.expand();
+app.enableClosingConfirmation()
+console.log(app.initDataUnsafe);
+
+function _user(id) {
+    let user = new Object();
+    user.id =id;
+    user.score = 0;
+    user.current_power = 0;
+    user.total_power = 0;
+    user.taps = 0;
+    user.time_sync = 0;
+    user = JSON.stringify(user);
+    return user
+}
+function sync(user){
+    fetch('http://api.lyclick.lc12.ru/sync', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: user
+    })
+    .then(response => response.json())
+    .then(response => console.log(JSON.stringify(response)))
+}
+
+let game_user = _user(app.initDataUnsafe.user.id)
+
+sync(game_user)
+
+nickname.innerText = `${app.initDataUnsafe.user.username}`
+
+
 
 let coins = localStorage.getItem('coins');
 let total = localStorage.getItem('total');
 let power = localStorage.getItem('power');
 let count = localStorage.getItem('count');
 let taps = 0;
+
+
+
+
+
 
 if(coins == null){
     localStorage.setItem('coins' , '0');
