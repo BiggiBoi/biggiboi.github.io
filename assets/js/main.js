@@ -24,7 +24,7 @@ function _user(id) {
     return user
 }
 function sync(user){
-    fetch('http://api.lyclick.lc12.ru/sync', {
+    fetch('https://api.lyclick.lc12.ru/sync', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
