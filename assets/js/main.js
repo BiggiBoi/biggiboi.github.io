@@ -14,6 +14,7 @@ app.enableClosingConfirmation()
 function _user(id) {
     let user = new Object();
     user.id =id;
+    user.class = '';
     user.score = 0;
     user.current_power = 0;
     user.total_power = 0;
