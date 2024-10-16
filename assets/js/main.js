@@ -10,7 +10,6 @@ const nickname = body.querySelector('.nickname')
 app.ready();
 app.expand();
 app.enableClosingConfirmation()
-console.log(app.initDataUnsafe);
 
 function _user(id) {
     let user = new Object();
