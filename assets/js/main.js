@@ -114,6 +114,16 @@ function to_click(e){
     }, 100);
 
     body.querySelector('.progress').style.width = `${(100 * info.current_power) / info.total_power}%`;
+
+    image.removeEventListener('click', (e)=> {
+        to_click(e)    
+    });
+    setTimeout(()=>{
+        image.addEventListener('click' , (e)=> {
+            to_click(e)    
+        });
+    },2000);
+    
 }
 
 document.addEventListener("visibilitychange", () => {
