@@ -90,6 +90,7 @@ image.addEventListener('click' , (e)=> {
     navigator.vibrate(5);
     
     if(Number(info.current_power) > 0){
+        score_div.textContent = `${(Number(info.score)+info.taps_power)}`;
         current_power_div.textContent = `${Number(info.current_power) - 1}`;
         info.current_power-=1;
         info.taps +=1; 
