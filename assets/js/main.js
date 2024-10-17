@@ -74,7 +74,6 @@ start_sync(app.initDataUnsafe);
 
 function send_sync(){
     timerID = setTimeout(()=>{
-        console.log('Нажатий'+info.taps);
         info.time_sync = Date.now();
         sync(info)
         info.taps = 0;
@@ -85,6 +84,10 @@ document.addEventListener("visibilitychange", () => {
     sync(info)
 });
 window.addEventListener("blur", e => {
+    info.time_sync = Date.now();
+    sync(info)
+});
+window.addEventListener("unload", e => {
     info.time_sync = Date.now();
     sync(info)
 });
