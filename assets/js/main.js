@@ -42,7 +42,9 @@ function start_sync(initData){
 
 let game_user = _user(app.initDataUnsafe.user.id)
 
-start_sync(app.initDataUnsafe)
+a= app.initDataUnsafe;
+console.log(typeof a);
+//start_sync(app.initDataUnsafe)
 
 nickname.innerText = `${app.initDataUnsafe.user.username}`
 
