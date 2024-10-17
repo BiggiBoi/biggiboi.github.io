@@ -14,12 +14,7 @@
         <div class="headers">
             <span>Рейтинг учеников</span>
         </div>
-        <div class="leaderboard">
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-        </div>
+        <div class="leaderboard"></div>
         <div class="loader">
             <img src="assets/img/loader.gif" alt="load"/>
         </div>
@@ -47,13 +42,16 @@
             })
             .then(response => response.json())
             .then(response => {
-                const tableRow = document.createElement("div");
+                for (user in response){
+                    console.log(user);
+                }
+                let tableRow = document.createElement("div");
                 tableRow.classList.add("table-row");
-                const l_username = document.createElement("div");
+                let l_username = document.createElement("div");
                 l_username.classList.add("l-username");
                 l_username.innerText = '';
                 l_username.appendChild(tableRow);
-                const l_score = document.createElement("div");
+                let l_score = document.createElement("div");
                 l_score.classList.add("l-score");
                 l_score.innerText = '';
                 l_score.appendChild(tableRow);
