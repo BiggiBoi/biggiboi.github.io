@@ -101,11 +101,12 @@ image.addEventListener('click' , (e)=> {
     power = localStorage.getItem('power');
     
     if(Number(power) > 0){
-        localStorage.setItem('coins' , `${Number(coins) + 1}`);
-        score.textContent = `${(Number(coins) + 1).toLocaleString()}`;
+        //localStorage.setItem('coins' , `${Number(coins) + 1}`);
+        score.textContent = `${(Number(score) + 1).toLocaleString()}`;
+        taps +=1;
     
-        localStorage.setItem('power' , `${Number(power) - 1}`);
-        body.querySelector('#power').textContent = `${Number(power) - 1}`;
+        //localStorage.setItem('power' , `${Number(power) - 1}`);
+        body.querySelector('#power').textContent = `${Number(current_power) - 1}`;
     } 
 
     if(x < 150 & y < 150){
@@ -124,7 +125,6 @@ image.addEventListener('click' , (e)=> {
     setTimeout(()=>{
         image.style.transform = 'translate(0px, 0px) scale(1)';
     }, 100);
-    taps = taps+1
     t();
 
     body.querySelector('.progress').style.width = `${(100 * power) / total}%`;
