@@ -85,9 +85,6 @@ image.addEventListener('click' , (e)=> {
     clearTimeout(timerID);
     let x = e.offsetX;
     let y = e.offsetY;
-
-
-    //navigator.vibrate(5);
     
     if(Number(info.current_power) > 0){
         score_div.textContent = `${(Number(info.score)+info.taps_power)}`;
