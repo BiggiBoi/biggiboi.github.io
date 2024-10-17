@@ -98,7 +98,7 @@ image.addEventListener('click' , (e)=> {
     clearTimeout(timerID);
     let x = e.offsetX;
     let y = e.offsetY;
-    if (Number(info.current_power) = 0) {
+    if (Number(info.current_power) == 0) {
         send_sync();
         info.taps = 0;
     }
