@@ -11,6 +11,7 @@ app.ready();
 app.expand();
 app.enableClosingConfirmation()
 
+let inf = {}
 let score = 0;
 let current_power = 0;
 let total_power = 0;
@@ -18,6 +19,7 @@ let taps_power = 1;
 let classes = '';
 let taps = 0;
 let timerID = '';
+
 
 function start_sync(initData){
     fetch('https://api.lyclick.lc12.ru/start', {
@@ -45,6 +47,16 @@ function start_sync(initData){
         score_div.innerText = score;
         console.log(response);
     })
+}
+function sync(data){
+    fetch('https://api.lyclick.lc12.ru/sync', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }).then(response => response.json())
 }
 
 start_sync(app.initDataUnsafe);
@@ -96,6 +108,7 @@ image.addEventListener('click' , (e)=> {
 setInterval(()=> {
     if(Number(total_power) > current_power){
         total_power_div.textContent = `${Number(current_power) + Number(taps_power)}`;
+        current_power+=taps_power;
         body.querySelector('.progress').style.width = `${(100 * current_power) / total_power}%`;
     }
 }, 1000);
