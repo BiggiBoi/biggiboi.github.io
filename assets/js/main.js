@@ -62,7 +62,9 @@ function sync(data){
     })
     .then(response => response.json())
     .then(response => {
+        console.log(response);
         info.score = response.score;
+        console.log(info.score);
         score_div.textContent = `${(Number(info.score)).toLocaleString()}`;
     })
 }
