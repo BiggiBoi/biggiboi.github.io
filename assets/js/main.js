@@ -4,7 +4,7 @@ const image = body.querySelector('#coin');
 const score_div = body.querySelector('h1');
 const current_power_div = body.querySelector('#power')
 const total_power_div = body.querySelector('#total')
-const avatar = body.querySelector('.avatar')
+const classes_div = body.querySelector('.avatar')
 const nickname = body.querySelector('.nickname')
 
 app.ready();
@@ -14,6 +14,7 @@ app.enableClosingConfirmation()
 let score = 0;
 let current_power = 0;
 let total_power = 0;
+let classes = '';
 
 function start_sync(initData){
     fetch('https://api.lyclick.lc12.ru/start', {
@@ -26,12 +27,16 @@ function start_sync(initData){
     })
     .then(response => response.json())
     .then(response => {
-        resp = response;
-        current_power = resp.current_power;
-        total_power = resp.total_power;
-        score = resp.score;
-        console.log(score, current_power, total_power);
-        nickname.innerText = resp.username;
+        current_power = response.current_power;
+        total_power = response.total_power;
+        score = response.score;
+        if (response.class == null){
+            classes = '?';
+        } else {
+            classes = response.class;
+        }
+        classes_div.innerText = classes;
+        nickname.innerText = response.username;
         current_power_div.innerHTML = current_power; 
         total_power_div.innerHTML = total_power;
         score_div.innerText = score;
