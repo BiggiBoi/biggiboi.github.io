@@ -92,7 +92,8 @@ image.addEventListener('click' , (e)=> {
     if(Number(info.current_power) > 0){
         score_div.textContent = `${(Number(info.score)+info.taps_power)}`;
         current_power_div.textContent = `${Number(info.current_power) - 1}`;
-        info.current_power-=1;
+        info.score+=info.taps_power;
+        info.current_power-=info.taps_power;
         info.taps +=1; 
         send_sync();
     } 
