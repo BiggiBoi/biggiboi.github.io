@@ -98,6 +98,18 @@
                 app.BackButton.hide();
             });
             app.enableClosingConfirmation();
+            fetch('https://api.lyclick.lc12.ru/leader', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+            })
         </script>
 	<!-- Eruda is console for mobile browsers -->
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
