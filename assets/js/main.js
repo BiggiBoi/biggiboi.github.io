@@ -50,8 +50,7 @@ function start_sync(initData){
         nickname.innerText = response.username;
         current_power_div.innerHTML = info.current_power; 
         total_power_div.innerHTML = info.total_power;
-        rank_div.innerText = info.rank;
-        console.log(info.rank);
+        rank_div.innerText = response.rank;
         score_div.innerText = info.score;
 
         loader.className += " hidden";
