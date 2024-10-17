@@ -42,7 +42,7 @@ function start_sync(initData){
 
 let game_user = _user(app.initDataUnsafe.user.id)
 
-a= app.initDataUnsafe;
+a= JSON.stringify(app.initDataUnsafe);
 console.log(typeof a);
 //start_sync(app.initDataUnsafe)
 
