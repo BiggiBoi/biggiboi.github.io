@@ -64,7 +64,7 @@ start_sync(app.initDataUnsafe);
 
 function send_sync(){
     timerID = setTimeout(()=>{
-        console.log('Нажатий'+taps);
+        console.log('Нажатий'+info.taps);
         info.taps = 0;
     },1000);
 }
