@@ -114,6 +114,18 @@
             })
             .then(response => response.json())
             .then(response => {
+                const tableRow = document.createElement("div");
+                tableRow.classList.add("table-row");
+                const l_username = document.createElement("div");
+                l_username.classList.add("l-username");
+                l_username.innerText = '';
+                l_username.appendChild(tableRow);
+                const l_score = document.createElement("div");
+                l_score.classList.add("l-score");
+                l_score.innerText = '';
+                l_score.appendChild(tableRow);
+
+                //newDiv.appendChild(newContent);
                 console.log(response);
             })
         </script>
