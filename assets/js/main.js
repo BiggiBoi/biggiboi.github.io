@@ -77,7 +77,7 @@ image.addEventListener('click' , (e)=> {
 
     navigator.vibrate(5);
     
-    if(Number(current_power) > 0){
+    if(Number(info.current_power) > 0){
         send_sync();
         score_div.textContent = `${(Number(info.score) + 1).toLocaleString()}`;
         current_power_div.textContent = `${Number(info.current_power) - 1}`;
@@ -106,7 +106,7 @@ image.addEventListener('click' , (e)=> {
 });
 
 setInterval(()=> {
-    if(Number(total_power) > current_power){
+    if(Number(info.total_power) > info.current_power){
         current_power_div.textContent = `${Number(info.current_power) + Number(info.taps_power)}`;
         info.current_power+=info.taps_power;
         body.querySelector('.progress').style.width = `${(100 * info.current_power) / info.total_power}%`;
