@@ -97,7 +97,9 @@ image.addEventListener('click' , (e)=> {
     clearTimeout(timerID);
     let x = e.offsetX;
     let y = e.offsetY;
-    
+    if (Number(info.current_power) < 0) {
+        info.taps = 0
+    }
     if(Number(info.current_power) > 0){
         score_div.textContent = `${(Number(info.score)+info.taps_power)}`;
         current_power_div.textContent = `${Number(info.current_power) - info.taps_power}`;
