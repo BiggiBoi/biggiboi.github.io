@@ -13,12 +13,8 @@ app.enableClosingConfirmation()
 
 function _user(id) {
     let user = new Object();
-<<<<<<< HEAD
     user.id = id;
-=======
-    user.id =id;
     user.class = '';
->>>>>>> ae67473931e801e72ba56a345a02c56f9cbd819b
     user.score = 0;
     user.current_power = 0;
     user.total_power = 0;
