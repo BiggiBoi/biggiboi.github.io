@@ -80,6 +80,14 @@ function send_sync(){
         info.taps = 0;
     },1000);
 }
+document.addEventListener("visibilitychange", () => {
+    info.time_sync = Date.now();
+    sync(info)
+});
+window.addEventListener("blur", e => {
+    info.time_sync = Date.now();
+    sync(info)
+});
 image.addEventListener('click' , (e)=> {
 
     clearTimeout(timerID);
