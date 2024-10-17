@@ -36,6 +36,7 @@ function sync(user){
     .then(response => response.json())
     .then(response => {
         resp = JSON.stringify(response);
+        console.log(resp);
     })
     .then(response => console.log(JSON.stringify(response)))
 }
