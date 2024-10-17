@@ -61,7 +61,10 @@ function sync(data){
         body: JSON.stringify(data)
     })
     .then(response => response.json())
-    .then(response => console.log(response))
+    .then(response => {
+        info.score = response.score;
+        score_div.textContent = `${(Number(info.score)).toLocaleString()}`;
+    })
 }
 
 start_sync(app.initDataUnsafe);
@@ -84,10 +87,9 @@ image.addEventListener('click' , (e)=> {
     
     if(Number(info.current_power) > 0){
         send_sync();
-        score_div.textContent = `${(Number(info.score) + 1).toLocaleString()}`;
+        
         current_power_div.textContent = `${Number(info.current_power) - 1}`;
         info.current_power-=1;
-        info.score+=1;
         info.taps +=1; 
     } 
 
