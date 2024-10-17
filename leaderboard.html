@@ -47,11 +47,11 @@
                     tableRow.classList.add("table-row");
                     let l_username = document.createElement("div");
                     l_username.classList.add("l-username");
-                    l_username.innerText = user.username;
-                    l_username.appendChild(tableRow);
                     let l_score = document.createElement("div");
                     l_score.classList.add("l-score");
-                    l_score.innerText = user.score;
+                    l_username.innerText = '1';
+                    l_score.innerText = '2';
+                    l_username.appendChild(tableRow);
                     l_score.appendChild(tableRow);
                     tableRow.appendChild(leaderboard);
                     console.log(user);
