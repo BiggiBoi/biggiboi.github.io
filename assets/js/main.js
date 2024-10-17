@@ -76,7 +76,7 @@ start_sync(app.initDataUnsafe);
 function send_sync(){
     timerID = setTimeout(()=>{
         info.time_sync = Date.now();
-        info.taps-=info.current_power
+        console.log(info.score);
         sync(info)
         info.taps = 0;
     },1000);
