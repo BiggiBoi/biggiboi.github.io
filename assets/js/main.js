@@ -7,6 +7,7 @@ const total_power_div = body.querySelector('#total');
 const classes_div = body.querySelector('.avatar');
 const nickname = body.querySelector('.nickname');
 const loader = document.querySelector(".loader");
+const rank_div = document.querySelector(".rank");
 
 app.ready();
 app.expand();
@@ -49,7 +50,9 @@ function start_sync(initData){
         nickname.innerText = response.username;
         current_power_div.innerHTML = info.current_power; 
         total_power_div.innerHTML = info.total_power;
+        rank_div.innerText = info.rank;
         score_div.innerText = info.score;
+
         loader.className += " hidden";
     })
 }
@@ -66,7 +69,7 @@ function sync(data){
     .then(response => {
         console.log(response);
         info.score = response.score;
-
+        rank_div.innerText = info.rank;
         score_div.textContent = `${(Number(info.score)).toLocaleString()}`;
     })
 }
