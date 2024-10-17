@@ -92,18 +92,12 @@
         </div>
         <script src="assets/js/main.js"></script>
         <script>
-            let app = Telegram.WebApp;
-            app.ready();
-            app.expand();
             app.BackButton.show();
             app.BackButton.onClick(function() {
                 history.back();
                 app.BackButton.hide();
             });
             app.enableClosingConfirmation();
-            console.log(app.initDataUnsafe);
-            nick = document.querySelector('.nickname');
-            nick.innerText = `${app.initDataUnsafe.user.username}`
         </script>
 	<!-- Eruda is console for mobile browsers -->
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
