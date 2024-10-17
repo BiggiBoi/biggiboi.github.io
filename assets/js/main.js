@@ -30,7 +30,7 @@ function start_sync(initData){
         current_power = resp.current_power;
         total_power = resp.total_power;
         score = resp.score;
-
+        console.log(score, current_power, total_power);
         nickname.innerText = resp.username;
         current_power_div.innerHTML = current_power; 
         total_power_div.innerHTML = total_power;
