@@ -32,7 +32,7 @@ function start_sync(initData){
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: initData
+        body: JSON.stringify(initData)
     })
     .then(response => response.json())
     .then(response => {
