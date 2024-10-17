@@ -108,7 +108,8 @@
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
-                }
+                },
+                body: JSON.stringify({'1':'1'})
             })
             .then(response => response.json())
             .then(response => {
