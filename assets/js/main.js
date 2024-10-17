@@ -14,6 +14,7 @@ app.enableClosingConfirmation()
 let score = 0;
 let current_power = 0;
 let total_power = 0;
+let taps_power = 1;
 let classes = '';
 let taps = 0;
 let timerID = '';
@@ -47,40 +48,6 @@ function start_sync(initData){
 }
 
 start_sync(app.initDataUnsafe);
-
-
-/*
-if(coins == null){
-    localStorage.setItem('coins' , '0');
-    score.textContent = '0';
-}else{
-    score.textContent = Number(coins).toLocaleString();
-}
-
-if(total == null){
-    localStorage.setItem('total' , '500')
-    body.querySelector('#total').textContent = '/500';
-}else {
-    body.querySelector('#total').textContent = `/${total}`;
-}
-
-
-if(power == null){
-    localStorage.setItem('power' , '500');
-    body.querySelector('#power').textContent = '500';
-}else{
-    body.querySelector('#power').textContent = power;
-}
-
-
-if(count == null){
-    localStorage.setItem('count' , '1')
-}
-
-window.addEventListener('unload', function(){
-    localStorage.setItem('coins' , '0');
-});
-*/
 
 function t(){
     timerID = setTimeout(()=>{
@@ -127,11 +94,8 @@ image.addEventListener('click' , (e)=> {
 });
 
 setInterval(()=> {
-    count = localStorage.getItem('count')
-    power = localStorage.getItem('power');
-    if(Number(total) > power){
-        localStorage.setItem('power' , `${Number(power) + Number(count)}`);
-        body.querySelector('#power').textContent = `${Number(power) + Number(count)}`;
-        body.querySelector('.progress').style.width = `${(100 * power) / total}%`;
+    if(Number(total_power) > current_power){
+        total_power_div.textContent = `${Number(current_power) + Number(taps_power)}`;
+        body.querySelector('.progress').style.width = `${(100 * current_power) / total_power}%`;
     }
 }, 1000);
