@@ -1,9 +1,9 @@
 const app = Telegram.WebApp;
 const body = document.body;
 const image = body.querySelector('#coin');
-const score = body.querySelector('h1');
-const current_power = body.querySelector('#power')
-const total_power = body.querySelector('#total')
+const score_div = body.querySelector('h1');
+const current_power_div = body.querySelector('#power')
+const total_power_div = body.querySelector('#total')
 const avatar = body.querySelector('.avatar')
 const nickname = body.querySelector('.nickname')
 
@@ -11,21 +11,11 @@ app.ready();
 app.expand();
 app.enableClosingConfirmation()
 
-function _user(id) {
-    let user = new Object();
-    user.id = id;
-    user.class = '';
-    user.score = 0;
-    user.current_power = 0;
-    user.total_power = 0;
-    user.tap_power = 1;
-    user.taps = 0;
-    user.lastSync = Date.now();
-    user = JSON.stringify(user);
-    return user
-}
+let score = 0;
+let current_power = 0;
+let total_power = 0;
+
 function start_sync(initData){
-    console.log(typeof initData);
     fetch('https://api.lyclick.lc12.ru/start', {
         method: 'POST',
         headers: {
@@ -37,19 +27,22 @@ function start_sync(initData){
     .then(response => response.json())
     .then(response => {
         resp = JSON.stringify(response);
+        current_power = resp.current_power;
+        total_power = resp.total_power;
+        score = resp.score;
+
+        nickname.innerText = resp.username;
+        current_power_div.innerHTML = current_power; 
+        total_power_div.innerHTML = total_power;
+        score_div.innerText = score;
+        
         console.log(resp);
     })
 }
 
-let game_user = _user(app.initDataUnsafe.user.id)
-
 //a= JSON.stringify(app.initDataUnsafe);
 //console.log(typeof a);
 start_sync(app.initDataUnsafe);
-
-nickname.innerText = `${app.initDataUnsafe.user.username}`
-
-
 
 let coins = localStorage.getItem('coins');
 let total = localStorage.getItem('total');
@@ -61,7 +54,7 @@ let taps = 0;
 
 
 
-
+/*
 if(coins == null){
     localStorage.setItem('coins' , '0');
     score.textContent = '0';
@@ -92,6 +85,7 @@ if(count == null){
 window.addEventListener('unload', function(){
     localStorage.setItem('coins' , '0');
 });
+*/
 
 timerID=0;
 function t(){
