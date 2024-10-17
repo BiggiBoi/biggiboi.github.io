@@ -81,20 +81,8 @@ function send_sync(){
         info.taps = 0;
     },1000);
 }
-document.addEventListener("visibilitychange", () => {
-    info.time_sync = Date.now();
-    sync(info)
-});
-window.addEventListener("blur", e => {
-    info.time_sync = Date.now();
-    sync(info)
-});
-window.addEventListener("unload", e => {
-    info.time_sync = Date.now();
-    sync(info)
-});
-image.addEventListener('click' , (e)=> {
 
+function to_click(e){
     clearTimeout(timerID);
     let x = e.offsetX;
     let y = e.offsetY;
@@ -125,6 +113,22 @@ image.addEventListener('click' , (e)=> {
     }, 100);
 
     body.querySelector('.progress').style.width = `${(100 * info.current_power) / info.total_power}%`;
+}
+
+document.addEventListener("visibilitychange", () => {
+    info.time_sync = Date.now();
+    sync(info)
+});
+window.addEventListener("blur", e => {
+    info.time_sync = Date.now();
+    sync(info)
+});
+window.addEventListener("unload", e => {
+    info.time_sync = Date.now();
+    sync(info)
+});
+image.addEventListener('click' , (e)=> {
+    to_click(e)    
 });
 
 setInterval(()=> {
