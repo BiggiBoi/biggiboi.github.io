@@ -61,7 +61,7 @@ function sync(data){
         body: JSON.stringify(data)
     })
     .then(response => response.json())
-    .then(console.log(response))
+    .then(response => console.log(response))
 }
 
 start_sync(app.initDataUnsafe);
