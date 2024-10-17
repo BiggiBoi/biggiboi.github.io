@@ -25,7 +25,7 @@ function _user(id) {
     return user
 }
 function start_sync(initData){
-    fetch('https://api.lyclick.lc12.ru/sync', {
+    fetch('https://api.lyclick.lc12.ru/start', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -111,7 +111,7 @@ image.addEventListener('click' , (e)=> {
     
     if(Number(power) > 0){
         localStorage.setItem('coins' , `${Number(coins) + 1}`);
-        h1.textContent = `${(Number(coins) + 1).toLocaleString()}`;
+        score.textContent = `${(Number(coins) + 1).toLocaleString()}`;
     
         localStorage.setItem('power' , `${Number(power) - 1}`);
         body.querySelector('#power').textContent = `${Number(power) - 1}`;
