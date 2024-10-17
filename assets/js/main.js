@@ -76,6 +76,7 @@ start_sync(app.initDataUnsafe);
 function send_sync(){
     timerID = setTimeout(()=>{
         info.time_sync = Date.now();
+        info.taps-=info.current_power
         sync(info)
         info.taps = 0;
     },1000);
@@ -97,7 +98,7 @@ image.addEventListener('click' , (e)=> {
     clearTimeout(timerID);
     let x = e.offsetX;
     let y = e.offsetY;
-    if (Number(info.current_power) < 0) {
+    if (Number(info.current_power) = 0) {
         info.taps = 0
     }
     if(Number(info.current_power) > 0){
