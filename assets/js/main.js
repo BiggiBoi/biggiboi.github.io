@@ -15,6 +15,8 @@ let score = 0;
 let current_power = 0;
 let total_power = 0;
 let classes = '';
+let taps = 0;
+let timerID = '';
 
 function start_sync(initData){
     fetch('https://api.lyclick.lc12.ru/start', {
@@ -40,23 +42,11 @@ function start_sync(initData){
         current_power_div.innerHTML = current_power; 
         total_power_div.innerHTML = total_power;
         score_div.innerText = score;
-        
-        console.log(resp);
+        console.log(response);
     })
 }
 
-//a= JSON.stringify(app.initDataUnsafe);
-//console.log(typeof a);
 start_sync(app.initDataUnsafe);
-
-let coins = localStorage.getItem('coins');
-let total = localStorage.getItem('total');
-let power = localStorage.getItem('power');
-let count = localStorage.getItem('count');
-let taps = 0;
-
-
-
 
 
 /*
@@ -92,7 +82,6 @@ window.addEventListener('unload', function(){
 });
 */
 
-timerID=0;
 function t(){
     timerID = setTimeout(()=>{
         console.log('Нажатий'+taps);
