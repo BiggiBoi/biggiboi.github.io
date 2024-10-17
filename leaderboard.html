@@ -49,8 +49,8 @@
                     l_username.classList.add("l-username");
                     let l_score = document.createElement("div");
                     l_score.classList.add("l-score");
-                    l_username.innerText = '1';
-                    l_score.innerText = '2';
+                    l_username.innerText = user.username;
+                    l_score.innerText = user.score;
                     l_username.appendChild(tableRow);
                     l_score.appendChild(tableRow);
                     tableRow.appendChild(leaderboard);
@@ -58,7 +58,6 @@
                 }
                 
                 loader.className += " hidden";
-                console.log(response);
             })
         </script>
 	<!-- Eruda is console for mobile browsers -->
