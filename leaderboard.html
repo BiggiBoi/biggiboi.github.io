@@ -92,8 +92,11 @@
                 <div class="l-score">10000</div>
             </div>
         </div>
-        <script src="assets/js/main.js"></script>
         <script>
+            const app = Telegram.WebApp;
+            app.ready();
+            app.expand();
+            app.enableClosingConfirmation()
             app.BackButton.show();
             app.BackButton.onClick(function() {
                 history.back();
