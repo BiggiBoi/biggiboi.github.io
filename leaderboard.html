@@ -19,78 +19,9 @@
                 <div class="l-username">Дан</div>
                 <div class="l-score">10000</div>
             </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
-            <div class="table-row">
-                <div class="l-username">Дан</div>
-                <div class="l-score">10000</div>
-            </div>
+        </div>
+        <div class="loader">
+            <img src="assets/img/loader.gif" alt="load"/>
         </div>
         <script>
             const app = Telegram.WebApp;
@@ -103,6 +34,8 @@
                 app.BackButton.hide();
             });
             app.enableClosingConfirmation();
+            const loader = document.querySelector(".loader");
+            const leaderboard = document.querySelector(".leaderboard");
             const body = { "count": 1 };
             fetch('https://api.lyclick.lc12.ru/leader', {
                 method: 'POST',
@@ -124,8 +57,8 @@
                 l_score.classList.add("l-score");
                 l_score.innerText = '';
                 l_score.appendChild(tableRow);
-
-                //newDiv.appendChild(newContent);
+                tableRow.appendChild(leaderboard);
+                loader.className += " hidden";
                 console.log(response);
             })
         </script>
