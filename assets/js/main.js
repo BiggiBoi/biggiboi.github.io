@@ -69,7 +69,7 @@ function sync(data){
     .then(response => {
         console.log(response);
         info.score = response.score;
-        rank_div.innerText = info.rank;
+        rank_div.innerText = response.rank;
         score_div.textContent = `${(Number(info.score)).toLocaleString()}`;
     })
 }
