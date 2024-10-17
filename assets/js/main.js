@@ -62,7 +62,7 @@ function sync(data){
 
 start_sync(app.initDataUnsafe);
 
-function t(){
+function send_sync(){
     timerID = setTimeout(()=>{
         console.log('Нажатий'+taps);
         info.taps = 0;
@@ -78,6 +78,7 @@ image.addEventListener('click' , (e)=> {
     navigator.vibrate(5);
     
     if(Number(current_power) > 0){
+        send_sync();
         score_div.textContent = `${(Number(info.score) + 1).toLocaleString()}`;
         current_power_div.textContent = `${Number(info.current_power) - 1}`;
         info.current_power-=1;
@@ -100,8 +101,6 @@ image.addEventListener('click' , (e)=> {
     setTimeout(()=>{
         image.style.transform = 'translate(0px, 0px) scale(1)';
     }, 100);
-
-    t();
 
     body.querySelector('.progress').style.width = `${(100 * info.current_power) / info.total_power}%`;
 });
