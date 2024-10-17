@@ -24,26 +24,25 @@ function _user(id) {
     user = JSON.stringify(user);
     return user
 }
-function sync(user){
+function start_sync(initData){
     fetch('https://api.lyclick.lc12.ru/sync', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: user
+        body: JSON.stringify(initData)
     })
     .then(response => response.json())
     .then(response => {
         resp = JSON.stringify(response);
         console.log(resp);
     })
-    .then(response => console.log(JSON.stringify(response)))
 }
 
 let game_user = _user(app.initDataUnsafe.user.id)
 
-sync(game_user)
+start_sync(app.initDataUnsafe)
 
 nickname.innerText = `${app.initDataUnsafe.user.username}`
 
