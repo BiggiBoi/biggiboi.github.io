@@ -26,7 +26,7 @@ function start_sync(initData){
     })
     .then(response => response.json())
     .then(response => {
-        resp = JSON.parse(response);
+        resp = response;
         current_power = resp.current_power;
         total_power = resp.total_power;
         score = resp.score;
