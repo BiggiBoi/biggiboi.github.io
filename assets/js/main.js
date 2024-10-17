@@ -61,9 +61,9 @@ let taps = 0;
 
 if(coins == null){
     localStorage.setItem('coins' , '0');
-    h1.textContent = '0';
+    score.textContent = '0';
 }else{
-    h1.textContent = Number(coins).toLocaleString();
+    score.textContent = Number(coins).toLocaleString();
 }
 
 if(total == null){
