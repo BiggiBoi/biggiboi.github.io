@@ -43,19 +43,20 @@
             .then(response => response.json())
             .then(response => {
                 for (user in response){
+                    let tableRow = document.createElement("div");
+                    tableRow.classList.add("table-row");
+                    let l_username = document.createElement("div");
+                    l_username.classList.add("l-username");
+                    l_username.innerText = user.username;
+                    l_username.appendChild(tableRow);
+                    let l_score = document.createElement("div");
+                    l_score.classList.add("l-score");
+                    l_score.innerText = user.score;
+                    l_score.appendChild(tableRow);
+                    tableRow.appendChild(leaderboard);
                     console.log(user);
                 }
-                let tableRow = document.createElement("div");
-                tableRow.classList.add("table-row");
-                let l_username = document.createElement("div");
-                l_username.classList.add("l-username");
-                l_username.innerText = '';
-                l_username.appendChild(tableRow);
-                let l_score = document.createElement("div");
-                l_score.classList.add("l-score");
-                l_score.innerText = '';
-                l_score.appendChild(tableRow);
-                tableRow.appendChild(leaderboard);
+                
                 loader.className += " hidden";
                 console.log(response);
             })
