@@ -1,7 +1,7 @@
 const app = Telegram.WebApp;
 const body = document.body;
 const image = body.querySelector('#coin');
-const h1 = body.querySelector('h1');
+const score = body.querySelector('h1');
 const current_power = body.querySelector('#power')
 const total_power = body.querySelector('#total')
 const avatar = body.querySelector('.avatar')
@@ -13,12 +13,13 @@ app.enableClosingConfirmation()
 
 function _user(id) {
     let user = new Object();
-    user.id =id;
+    user.id = id;
     user.score = 0;
     user.current_power = 0;
     user.total_power = 0;
+    user.tap_power = 1;
     user.taps = 0;
-    user.time_sync = 0;
+    user.lastSync = Date.now();
     user = JSON.stringify(user);
     return user
 }
@@ -32,6 +33,9 @@ function sync(user){
         body: user
     })
     .then(response => response.json())
+    .then(response => {
+        resp = JSON.stringify(response);
+    })
     .then(response => console.log(JSON.stringify(response)))
 }
 
@@ -84,6 +88,7 @@ if(count == null){
 window.addEventListener('unload', function(){
     localStorage.setItem('coins' , '0');
 });
+
 timerID=0;
 function t(){
     timerID = setTimeout(()=>{
