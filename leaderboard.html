@@ -103,14 +103,14 @@
                 app.BackButton.hide();
             });
             app.enableClosingConfirmation();
-            g={d:'1'};
+            const body = { "count": 1 };
             fetch('https://api.lyclick.lc12.ru/leader', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(g)
+                body: JSON.stringify(body)
             })
             .then(response => response.json())
             .then(response => {
