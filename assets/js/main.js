@@ -17,7 +17,8 @@ let info = {
     current_power: 0,
     total_power: 0,
     taps_power: 1,
-    taps:0
+    taps:0,
+    time_sync: Date.now()
 }
 let classes = '';
 let timerID = '';
@@ -64,7 +65,7 @@ function sync(data){
     .then(response => {
         console.log(response);
         info.score = response.score;
-        console.log(info.score);
+
         score_div.textContent = `${(Number(info.score)).toLocaleString()}`;
     })
 }
@@ -74,6 +75,7 @@ start_sync(app.initDataUnsafe);
 function send_sync(){
     timerID = setTimeout(()=>{
         console.log('Нажатий'+info.taps);
+        info.time_sync = Date.now();
         sync(info)
         info.taps = 0;
     },1000);
@@ -88,11 +90,10 @@ image.addEventListener('click' , (e)=> {
     navigator.vibrate(5);
     
     if(Number(info.current_power) > 0){
-        send_sync();
-        
         current_power_div.textContent = `${Number(info.current_power) - 1}`;
         info.current_power-=1;
         info.taps +=1; 
+        send_sync();
     } 
 
     if(x < 150 & y < 150){
