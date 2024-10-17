@@ -51,10 +51,9 @@
                     l_score.classList.add("l-score");
                     l_username.innerText = user.username;
                     l_score.innerText = user.score;
-                    l_username.appendChild(tableRow);
-                    l_score.appendChild(tableRow);
+                    tableRow.appendChild(l_username);
+                    tableRow.appendChild(l_score);
                     leaderboard.appendChild(tableRow);
-                    console.log(user.username);
                 }
                 
                 loader.className += " hidden";
