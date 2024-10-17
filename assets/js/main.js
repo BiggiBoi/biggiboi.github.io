@@ -2,10 +2,11 @@ const app = Telegram.WebApp;
 const body = document.body;
 const image = body.querySelector('#coin');
 const score_div = body.querySelector('h1');
-const current_power_div = body.querySelector('#power')
-const total_power_div = body.querySelector('#total')
-const classes_div = body.querySelector('.avatar')
-const nickname = body.querySelector('.nickname')
+const current_power_div = body.querySelector('#power');
+const total_power_div = body.querySelector('#total');
+const classes_div = body.querySelector('.avatar');
+const nickname = body.querySelector('.nickname');
+const loader = document.querySelector(".loader");
 
 app.ready();
 app.expand();
@@ -49,7 +50,7 @@ function start_sync(initData){
         current_power_div.innerHTML = info.current_power; 
         total_power_div.innerHTML = info.total_power;
         score_div.innerText = info.score;
-        console.log(response);
+        loader.className += " hidden";
     })
 }
 function sync(data){
