@@ -11,13 +11,14 @@ app.ready();
 app.expand();
 app.enableClosingConfirmation()
 
-let inf = {}
-let score = 0;
-let current_power = 0;
-let total_power = 0;
-let taps_power = 1;
+let info = {
+    score: 0,
+    current_power: 0,
+    total_power: 0,
+    taps_power: 1,
+    taps:0
+}
 let classes = '';
-let taps = 0;
 let timerID = '';
 
 
@@ -32,9 +33,9 @@ function start_sync(initData){
     })
     .then(response => response.json())
     .then(response => {
-        current_power = response.current_power;
-        total_power = response.total_power;
-        score = response.score;
+        info.current_power = response.current_power;
+        info.total_power = response.total_power;
+        info.score = response.score;
         if (response.class == null){
             classes = '?';
         } else {
@@ -42,9 +43,9 @@ function start_sync(initData){
         }
         classes_div.innerText = classes;
         nickname.innerText = response.username;
-        current_power_div.innerHTML = current_power; 
-        total_power_div.innerHTML = total_power;
-        score_div.innerText = score;
+        current_power_div.innerHTML = info.current_power; 
+        total_power_div.innerHTML = info.total_power;
+        score_div.innerText = info.score;
         console.log(response);
     })
 }
@@ -64,7 +65,7 @@ start_sync(app.initDataUnsafe);
 function t(){
     timerID = setTimeout(()=>{
         console.log('Нажатий'+taps);
-        taps = 0;
+        info.taps = 0;
     },1000);
 }
 image.addEventListener('click' , (e)=> {
@@ -77,11 +78,11 @@ image.addEventListener('click' , (e)=> {
     navigator.vibrate(5);
     
     if(Number(current_power) > 0){
-        score_div.textContent = `${(Number(score) + 1).toLocaleString()}`;
-        current_power_div.textContent = `${Number(current_power) - 1}`;
-        current_power-=1;
-        score+=1;
-        taps +=1; 
+        score_div.textContent = `${(Number(info.score) + 1).toLocaleString()}`;
+        current_power_div.textContent = `${Number(info.current_power) - 1}`;
+        info.current_power-=1;
+        info.score+=1;
+        info.taps +=1; 
     } 
 
     if(x < 150 & y < 150){
@@ -102,13 +103,13 @@ image.addEventListener('click' , (e)=> {
 
     t();
 
-    body.querySelector('.progress').style.width = `${(100 * current_power) / total_power}%`;
+    body.querySelector('.progress').style.width = `${(100 * info.current_power) / info.total_power}%`;
 });
 
 setInterval(()=> {
     if(Number(total_power) > current_power){
-        total_power_div.textContent = `${Number(current_power) + Number(taps_power)}`;
-        current_power+=taps_power;
-        body.querySelector('.progress').style.width = `${(100 * current_power) / total_power}%`;
+        current_power_div.textContent = `${Number(info.current_power) + Number(info.taps_power)}`;
+        info.current_power+=info.taps_power;
+        body.querySelector('.progress').style.width = `${(100 * info.current_power) / info.total_power}%`;
     }
 }, 1000);
