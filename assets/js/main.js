@@ -96,20 +96,13 @@ image.addEventListener('click' , (e)=> {
 
 
     navigator.vibrate(5);
-
-    //coins = localStorage.getItem('coins');
-    //power = localStorage.getItem('power');
     
     if(Number(current_power) > 0){
-        //localStorage.setItem('coins' , `${Number(coins) + 1}`);
         score_div.textContent = `${(Number(score) + 1).toLocaleString()}`;
         current_power_div.textContent = `${Number(current_power) - 1}`;
         current_power-=1;
         score+=1;
-        taps +=1;
-    
-        //localStorage.setItem('power' , `${Number(power) - 1}`);
-        
+        taps +=1; 
     } 
 
     if(x < 150 & y < 150){
@@ -124,13 +117,13 @@ image.addEventListener('click' , (e)=> {
     else if (x > 150 & y < 150){
         image.style.transform = 'translate(0.25rem, -0.25rem) scale(0.95) skewY(5deg) skewX(-5deg)';
     }
-
     setTimeout(()=>{
         image.style.transform = 'translate(0px, 0px) scale(1)';
     }, 100);
+
     t();
 
-    body.querySelector('.progress').style.width = `${(100 * power) / total}%`;
+    body.querySelector('.progress').style.width = `${(100 * current_power) / total_power}%`;
 });
 
 setInterval(()=> {
