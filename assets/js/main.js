@@ -12,6 +12,7 @@ app.expand();
 app.enableClosingConfirmation()
 
 let info = {
+    id: 0,
     score: 0,
     current_power: 0,
     total_power: 0,
@@ -36,6 +37,7 @@ function start_sync(initData){
         info.current_power = response.current_power;
         info.total_power = response.total_power;
         info.score = response.score;
+        info.id = response.telegram_id;
         if (response.class == null){
             classes = '?';
         } else {
@@ -65,6 +67,7 @@ start_sync(app.initDataUnsafe);
 function send_sync(){
     timerID = setTimeout(()=>{
         console.log('Нажатий'+info.taps);
+        sync(info)
         info.taps = 0;
     },1000);
 }
