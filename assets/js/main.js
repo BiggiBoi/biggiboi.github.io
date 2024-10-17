@@ -102,7 +102,7 @@ image.addEventListener('click' , (e)=> {
     
     if(Number(power) > 0){
         //localStorage.setItem('coins' , `${Number(coins) + 1}`);
-        score.textContent = `${(Number(score) + 1).toLocaleString()}`;
+        score_div.textContent = `${(Number(score) + 1).toLocaleString()}`;
         taps +=1;
     
         //localStorage.setItem('power' , `${Number(power) - 1}`);
