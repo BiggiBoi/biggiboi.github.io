@@ -51,6 +51,7 @@ function start_sync(initData){
         current_power_div.innerHTML = info.current_power; 
         total_power_div.innerHTML = info.total_power;
         rank_div.innerText = info.rank;
+        console.log(info.rank);
         score_div.innerText = info.score;
 
         loader.className += " hidden";
@@ -79,7 +80,6 @@ start_sync(app.initDataUnsafe);
 function send_sync(){
     timerID = setTimeout(()=>{
         info.time_sync = Date.now();
-        console.log(info.score);
         sync(info)
         info.taps = 0;
     },1000);
