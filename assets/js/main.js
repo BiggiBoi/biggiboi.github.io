@@ -106,7 +106,7 @@ image.addEventListener('click' , (e)=> {
         taps +=1;
     
         //localStorage.setItem('power' , `${Number(power) - 1}`);
-        body.querySelector('#power').textContent = `${Number(current_power) - 1}`;
+        current_power_div.textContent = `${Number(current_power) - 1}`;
     } 
 
     if(x < 150 & y < 150){
