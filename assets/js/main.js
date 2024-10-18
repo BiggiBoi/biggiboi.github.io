@@ -94,10 +94,28 @@ function send_sync(){
     },1000);
 }
 
+function hint(x, y){
+    let hint_div = document.querySelector('.click-hint');
+    let hint = document.createElement("div");
+    hint.classList.add('hint');
+    hint.innerText = '+'+info.taps_power;
+    hint.style.top = y;
+    hint.style.left = x;
+    hint.style.visibility = 'visible';
+    hint_div.appendChild(hint);
+    hint.classList.add('hint-animation');
+    setTimeout(()=>{
+        hint.style = 'visibility: hidden; opacity: 0; translate(-50%, -50%) translateY(-120px)';
+        hint.remove();
+    }, 500);
+}
+
 function to_click(e){
     clearTimeout(timerID);
     let x = e.offsetX;
     let y = e.offsetY;
+    let x1 = e.pageX;
+    let y1 = e.pageY;
 
     if((Number(info.current_power) > 0) && (Number(info.current_power) - Number(info.taps_power) >= 0)){
         score_div.textContent = `${(Number(info.score)+info.taps_power).toLocaleString()}`;
@@ -107,7 +125,7 @@ function to_click(e){
         info.taps +=1; 
         send_sync();
     } 
-
+    hint(x1,y1);
     if(x < 150 & y < 150){
         image.style.transform = 'translate(-0.25rem, -0.25rem) scale(0.95) skewY(-5deg) skewX(5deg)';
     }
