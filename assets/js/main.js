@@ -47,7 +47,7 @@ function start_sync(initData){
         info.total_power = response.total_power;
         info.score = response.score;
         info.id = response.telegram_id;
-        taps_power = response.taps_power;
+        info.taps_power = response.taps_power;
         if (response.clan == null){
             clan = '?';
         } else {
