@@ -145,8 +145,8 @@ image.addEventListener('click' , (e)=> {
 
 setInterval(()=> {
     if(Number(info.total_power) > info.current_power){
-        current_power_div.textContent = `${Number(info.current_power) + Number(info.taps_power)}`;
-        info.current_power+=info.taps_power;
+        current_power_div.textContent = `${Number(info.current_power) + 1}`;
+        info.current_power+=1;
         body.querySelector('.progress').style.width = `${(100 * info.current_power) / info.total_power}%`;
     }
 }, 1000);
