@@ -99,7 +99,7 @@ function to_click(e){
     let x = e.offsetX;
     let y = e.offsetY;
 
-    if((Number(info.current_power) > 0) || (Number(info.current_power) - Number(info.taps_power) >= 0)){
+    if((Number(info.current_power) > 0) && (Number(info.current_power) - Number(info.taps_power) >= 0)){
         score_div.textContent = `${(Number(info.score)+info.taps_power).toLocaleString()}`;
         current_power_div.textContent = `${Number(info.current_power) - info.taps_power}`;
         info.score+=info.taps_power;
