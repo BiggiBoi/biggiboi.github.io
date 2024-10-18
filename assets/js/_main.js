@@ -4,7 +4,7 @@ const image = body.querySelector('#coin');
 const score_div = body.querySelector('h1');
 const current_power_div = body.querySelector('#power');
 const total_power_div = body.querySelector('#total');
-const classes_div = body.querySelector('.avatar');
+const clan_div = body.querySelector('.avatar');
 const nickname = body.querySelector('.nickname');
 const loader = document.querySelector(".loader");
 const rank_div = document.querySelector(".rank");
@@ -22,7 +22,7 @@ let info = {
     taps:0,
     time_sync: Date.now()
 }
-let classes = '';
+let clan = '';
 let timerID = '';
 
 
@@ -41,12 +41,12 @@ function start_sync(initData){
         info.total_power = response.total_power;
         info.score = response.score;
         info.id = response.telegram_id;
-        if (response.class == null){
-            classes = '?';
+        if (response.clan == null){
+            clan = '?';
         } else {
-            classes = response.class;
+            clan = response.clan;
         }
-        classes_div.innerText = classes;
+        clan_div.innerText = clan;
         nickname.innerText = response.username;
         current_power_div.innerHTML = info.current_power; 
         total_power_div.innerHTML = info.total_power;
