@@ -44,21 +44,36 @@
             .then(response => {
                 count=1
                 for (user of response){
-                    let num_div = document.createElement("div");
-                    num_div.innerText = '#'+count;
-                    let rank_div = document.createElement("div");
-                    rank_div.innerText = user.rank
                     let tableRow = document.createElement("div");
                     tableRow.classList.add("table-row");
-                    let l_username = document.createElement("div");
+
+                    let lr = document.createElement("div");
+                    lr.classList.add("l-r");
+
+                    let num_div = document.createElement("div");               
+                    num_div.innerText = '#'+count;
+
+                    let cont = document.createElement("div");
+                    cont.classList('l-container');
+
+                    let l_username = document.createElement("span");
                     l_username.classList.add("l-username");
+
+                    let rank_div = document.createElement("span");
+                    rank_div.innerText = user.rank
+
                     let l_score = document.createElement("div");
                     l_score.classList.add("l-score");
+
+                    lr.appendChild(num_div);
+                    lr.appendChild(cont);
+                    cont.appendChild(l_username);
+                    cont.appendChild(rank_div);                 
+                    
+                    
                     l_username.innerText = user.username;
                     l_score.innerText = user.score;
-                    tableRow.appendChild(num_div);
-                    tableRow.appendChild(l_username);
-                    tableRow.appendChild(rank_div);
+                    tableRow.appendChild(lr);
                     tableRow.appendChild(l_score);
                     leaderboard.appendChild(tableRow);
                     count+=1;

@@ -241,3 +241,17 @@ a:active {
 	justify-content: center;
 	align-items: center;
 }
+.l-container{
+    display: flex;
+    flex-direction: column;
+}
+.l-rank{
+    font-size: 12px;
+}
+.l-num{
+    margin-right: 1rem;
+}
+.l-r{
+    display: flex;
+    align-items: center;
+}
