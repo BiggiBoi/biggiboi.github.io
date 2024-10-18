@@ -42,7 +42,12 @@
             })
             .then(response => response.json())
             .then(response => {
+                count=1
                 for (user of response){
+                    let num_div = document.createElement("div");
+                    num_div.innerText = '#'+count;
+                    let rank_div = document.createElement("div");
+                    rank_div.innerText = user.rank
                     let tableRow = document.createElement("div");
                     tableRow.classList.add("table-row");
                     let l_username = document.createElement("div");
@@ -51,7 +56,9 @@
                     l_score.classList.add("l-score");
                     l_username.innerText = user.username;
                     l_score.innerText = user.score;
+                    tableRow.appendChild(num_div);
                     tableRow.appendChild(l_username);
+                    tableRow.appendChild(rank_div);
                     tableRow.appendChild(l_score);
                     leaderboard.appendChild(tableRow);
                 }
