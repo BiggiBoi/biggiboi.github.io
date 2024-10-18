@@ -47,6 +47,7 @@ function start_sync(initData){
         info.total_power = response.total_power;
         info.score = response.score;
         info.id = response.telegram_id;
+        taps_power = response.taps_power;
         if (response.clan == null){
             clan = '?';
         } else {
@@ -74,6 +75,7 @@ function sync(data){
     .then(response => response.json())
     .then(response => {
         info.score = response.score;
+        info.taps_power = response.taps_power;
         rank_div.innerText = response.rank;
         score_div.textContent = `${(Number(info.score)).toLocaleString()}`;
     })
@@ -95,7 +97,7 @@ function to_click(e){
     let y = e.offsetY;
 
     if(Number(info.current_power) > 0){
-        score_div.textContent = `${(Number(info.score)+info.taps_power)}`;
+        score_div.textContent = `${(Number(info.score)+info.taps_power).toLocaleString()}`;
         current_power_div.textContent = `${Number(info.current_power) - info.taps_power}`;
         info.score+=info.taps_power;
         info.current_power-=info.taps_power;
