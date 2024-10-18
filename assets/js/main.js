@@ -43,6 +43,7 @@ function start_sync(initData){
     })
     .then(response => response.json())
     .then(response => {
+        console.log(response);
         info.current_power = response.current_power;
         info.total_power = response.total_power;
         info.score = response.score;
@@ -74,6 +75,7 @@ function sync(data){
     })
     .then(response => response.json())
     .then(response => {
+        console.log(response);
         info.score = response.score;
         info.taps_power = response.taps_power;
         rank_div.innerText = response.rank;
