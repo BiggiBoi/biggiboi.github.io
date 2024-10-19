@@ -60,6 +60,8 @@ function start_sync(initData){
     })
 }
 function sync(data){
+    data.time_sync = Date.now(),
+    data.id = (app.initDataUnsafe.user.id).toString(16),
     fetch('https://api.lyclick.lc12.ru/sync', {
         method: 'POST',
         headers: {
@@ -118,8 +120,8 @@ function to_click(e){
         
     }
     let user = {
-        time_sync: Date.now(),
-        id: app.initDataUnsafe.user.id,
+        time_sync: 0,
+        id: 0,
         score: 0,
         current_power: 0,
         taps: 0
