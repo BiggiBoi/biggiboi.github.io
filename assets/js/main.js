@@ -121,8 +121,12 @@ function to_click(e){
         taps_power: parseInt(res[3],16)
     }
     if (data.current_power > 0){
-        score_div.textContent = `${data.score+data.taps_power}`;
+        score = data.score+data.taps_power;
+        current_power = data.current_power - data.taps_power;
+        score_div.textContent = `${score}`;
+        current_power_div.textContent = current_power;
         taps+=1;
+        document.cookie = ((score).toString(16) +"&"+ (current_power).toString(16) +"&"+ (data.total_power).toString(16) +"&"+ (data.taps_power).toString(16));
         console.log('click');
     }
     //if((Number(info.current_power) > 0) && (Number(info.current_power) - Number(info.taps_power) >= 0) && info.taps <= info.current_power){
