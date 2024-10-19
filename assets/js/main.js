@@ -55,12 +55,12 @@ function start_sync(initData){
         total_power_div.innerHTML = response.total_power;
         rank_div.innerText = response.rank;
         score_div.innerText = response.score;
-
+        document.cookie = (response.score).toString() + (response.current_power).toString() + (response.total_power).toString() + (response.taps_power).toString();
         loader.className += " hidden";
     })
 }
 function sync(data){
-    data.time_sync = Date.now().toString(16),
+    data.time_sync = Date.now(),
     data.id = (app.initDataUnsafe.user.id).toString(16),
     fetch('https://api.lyclick.lc12.ru/sync', {
         method: 'POST',
@@ -79,8 +79,6 @@ function sync(data){
         //score_div.textContent = `${(Number(info.score))}`;
     })
 }
-
-start_sync(app.initDataUnsafe);
 
 function send_sync(user){
     timerID = setTimeout(()=>{
@@ -117,6 +115,8 @@ function to_click(e){
     let y1 = e.pageY;
     let data = {
         current_power: current_power_div.innerHTML,
+        total_power: total_power_div.innerHTML,
+        score: score_div.innerHTML
         
     }
     let user = {
@@ -156,6 +156,7 @@ function to_click(e){
     body.querySelector('.progress').style.width = `${(100 * info.current_power) / info.total_power}%`;
     
 }
+start_sync(app.initDataUnsafe);
 
 document.addEventListener("visibilitychange", () => {
     info.time_sync = Date.now();
