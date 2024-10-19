@@ -43,10 +43,6 @@ function start_sync(initData){
     })
     .then(response => response.json())
     .then(response => {
-        //info.current_power = response.current_power;
-        //info.total_power = response.total_power;
-        //info.score = response.score;
-        //info.id = response.telegram_id;
         info.taps_power = response.taps_power;
         if (response.clan == null){
             clan = '?';
@@ -88,6 +84,7 @@ function send_sync(){
     timerID = setTimeout(()=>{
         info.time_sync = Date.now();
         info.id = app.initDataUnsafe.user.id
+        console.log('sync',info.id);
         if (info.taps > 1){
             info.score = score_div.innerHTML;
         }
