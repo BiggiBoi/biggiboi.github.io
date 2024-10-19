@@ -113,7 +113,6 @@ function to_click(e){
     let y = e.offsetY;
     let x1 = e.pageX;
     let y1 = e.pageY;
-    //document.cookie = ((response.score).toString(16) +"&"+ (response.current_power).toString(16) +"&"+ (response.total_power).toString(16) +"&"+ (response.taps_power).toString(16));
     res = document.cookie.split('&');
     data = {
         score: parseInt(res[0],16),
@@ -132,6 +131,7 @@ function to_click(e){
     send_sync(user);
     if (data.current_power > 0 && (data.current_power - data.tap_power) >= 0 && info.taps <= data.current_power){
         score_div.textContent = `${data.score+data.taps_power}`;
+        console.log('click');
     }
     //if((Number(info.current_power) > 0) && (Number(info.current_power) - Number(info.taps_power) >= 0) && info.taps <= info.current_power){
     //    score_div.textContent = `${score_div.innerHTML+info.taps_power}`;
