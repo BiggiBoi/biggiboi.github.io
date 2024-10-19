@@ -138,7 +138,7 @@ function to_click(e){
         image.style.transform = 'translate(0px, 0px) scale(1)';
     }, 100);
 
-    body.querySelector('.progress').style.width = `${(100 * info.current_power) / info.total_power}%`;
+    body.querySelector('.progress').style.width = `${(100 * current_power) / data.total_power}%`;
     
 }
 
