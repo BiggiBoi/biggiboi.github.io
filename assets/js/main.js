@@ -60,7 +60,7 @@ function start_sync(initData){
     })
 }
 function sync(data){
-    data.time_sync = Date.now(),
+    data.time_sync = Date.now().toString(16),
     data.id = (app.initDataUnsafe.user.id).toString(16),
     fetch('https://api.lyclick.lc12.ru/sync', {
         method: 'POST',
