@@ -22,6 +22,17 @@
                 history.back()
             });
             app.enableClosingConfirmation();
+            const body = { "count": 1 };
+            fetch('https://api.lyclick.lc12.ru/clan', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            })
+            .then(response => response.json())
+            .then(response => {});
         </script>
 	</body>
 </html>

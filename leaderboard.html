@@ -12,7 +12,11 @@
 	</head>
 	<body class="bg-secondary">
         <div class="headers">
-            <span>Рейтинг учеников</span>
+            <span>Рейтинг</span>
+        </div>
+        <div class="l-knopka-cont">
+            <div class="l-knopka solo">Личный</div>
+            <div class="l-knopka clan">Класс</div>
         </div>
         <div class="leaderboard"></div>
         <div class="loader">
@@ -29,60 +33,138 @@
                 app.BackButton.hide();
             });
             app.enableClosingConfirmation();
+            const soloBut = document.querySelector('.solo');
+            const clanBut = document.querySelector('.clan');
             const loader = document.querySelector(".loader");
             const leaderboard = document.querySelector(".leaderboard");
-            const body = { "count": 1 };
-            fetch('https://api.lyclick.lc12.ru/leader', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(body)
-            })
-            .then(response => response.json())
-            .then(response => {
-                count=1
-                for (user of response){
-                    let tableRow = document.createElement("div");
-                    tableRow.classList.add("table-row");
 
-                    let lr = document.createElement("div");
-                    lr.classList.add("l-r");
+            function load_solo_stat(){
+                const body = { "count": 1 };
+                fetch('https://api.lyclick.lc12.ru/leader', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                })
+                .then(response => response.json())
+                .then(response => {
+                    count=1;
+                    for (user of response){
+                        let tableRow = document.createElement("div");
+                        tableRow.classList.add("table-row");
 
-                    let num_div = document.createElement("div");
-                    num_div.classList.add('l-num');               
-                    num_div.innerText = '#'+count;
+                        let lr = document.createElement("div");
+                        lr.classList.add("l-r");
 
-                    let cont = document.createElement("div");
-                    cont.classList.add('l-container');
+                        let num_div = document.createElement("div");
+                        num_div.classList.add('l-num');               
+                        num_div.innerText = '#'+count;
 
-                    let l_username = document.createElement("span");
-                    l_username.classList.add("l-username");
+                        let cont = document.createElement("div");
+                        cont.classList.add('l-container');
 
-                    let rank_div = document.createElement("span");
-                    rank_div.classList.add('l-rank');
-                    rank_div.innerText = user.rank
+                        let l_username = document.createElement("span");
+                        l_username.classList.add("l-username");
 
-                    let l_score = document.createElement("div");
-                    l_score.classList.add("l-score");
+                        let rank_div = document.createElement("span");
+                        rank_div.classList.add('l-rank');
+                        rank_div.innerText = user.rank
 
-                    lr.appendChild(num_div);
-                    lr.appendChild(cont);
-                    cont.appendChild(l_username);
-                    cont.appendChild(rank_div);                 
-                    
-                    
-                    l_username.innerText = user.username;
-                    l_score.innerText = user.score;
-                    tableRow.appendChild(lr);
-                    tableRow.appendChild(l_score);
-                    leaderboard.appendChild(tableRow);
-                    count+=1;
-                }
+                        let l_score = document.createElement("div");
+                        l_score.classList.add("l-score");
+
+                        lr.appendChild(num_div);
+                        lr.appendChild(cont);
+                        cont.appendChild(l_username);
+                        cont.appendChild(rank_div);                 
+                        
+                        
+                        l_username.innerText = user.username;
+                        l_score.innerText = user.score;
+                        tableRow.appendChild(lr);
+                        tableRow.appendChild(l_score);
+                        leaderboard.appendChild(tableRow);
+                        soloBut.className = 'l-knopka l-knopka-active';
+                        count+=1;
+                    }
                 
-                loader.className += " hidden";
-            })
+                    loader.className += " hidden";
+                })
+            }
+
+            function load_clan_stat(){
+                const body = { "count": 1 };
+                fetch('https://api.lyclick.lc12.ru/clan-stat', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                })
+                .then(response => response.json())
+                .then(response => {
+                    count=1;
+                    for (clan of response){
+                        let tableRow = document.createElement("div");
+                        tableRow.classList.add("table-row");
+
+                        let lr = document.createElement("div");
+                        lr.classList.add("l-r");
+
+                        let num_div = document.createElement("div");
+                        num_div.classList.add('l-num');               
+                        num_div.innerText = '#'+count;
+
+                        let cont = document.createElement("div");
+                        cont.classList.add('l-container');
+
+                        let l_username = document.createElement("span");
+                        l_username.classList.add("l-username");
+
+                        let rank_div = document.createElement("span");
+                        rank_div.classList.add('l-rank');
+                        rank_div.innerText = 'Участников: '+ clan.clan_members;
+
+                        let l_score = document.createElement("div");
+                        l_score.classList.add("l-score");
+
+                        lr.appendChild(num_div);
+                        lr.appendChild(cont);
+                        cont.appendChild(l_username);
+                        cont.appendChild(rank_div);                 
+                        
+                        
+                        l_username.innerText = clan.clan_name;
+                        l_score.innerText = clan.clan_score;
+                        tableRow.appendChild(lr);
+                        tableRow.appendChild(l_score);
+                        leaderboard.appendChild(tableRow);
+                        clanBut.className = 'l-knopka l-knopka-active';
+                        count+=1;
+                    }
+                    loader.className += " hidden";
+                });
+            }
+
+            soloBut.addEventListener('click' , (e)=> {
+                loader.className = "loader";
+                clanBut.className = 'l-knopka';
+                soloBut.className = 'l-knopka l-knopka-active';
+                leaderboard.textContent = '';
+                load_solo_stat();
+            });
+            clanBut.addEventListener('click' , (e)=> {
+                //loader.className = "loader";
+                leaderboard.textContent = '';
+                soloBut.className = 'l-knopka';
+                clanBut.className = 'l-knopka l-knopka-active';
+                load_clan_stat();
+            });
+
+            load_solo_stat();
         </script>
 	</body>
 </html>
