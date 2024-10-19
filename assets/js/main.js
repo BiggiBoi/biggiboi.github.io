@@ -127,7 +127,6 @@ function to_click(e){
         current_power_div.textContent = current_power;
         taps+=1;
         document.cookie = ((score).toString(16) +"&"+ (current_power).toString(16) +"&"+ (data.total_power).toString(16) +"&"+ (data.taps_power).toString(16));
-        console.log('click');
     }
     //if((Number(info.current_power) > 0) && (Number(info.current_power) - Number(info.taps_power) >= 0) && info.taps <= info.current_power){
     //    score_div.textContent = `${score_div.innerHTML+info.taps_power}`;
@@ -177,9 +176,8 @@ image.addEventListener('click' , (e)=> {
 });
 
 setInterval(()=> {
-    if(Number(info.total_power) > info.current_power){
-        current_power_div.textContent = `${Number(info.current_power) + 1}`;
-        info.current_power+=1;
-        body.querySelector('.progress').style.width = `${(100 * info.current_power) / info.total_power}%`;
+    if(parseInt(document.cookie.split('&')[2],16) > parseInt(document.cookie.split('&')[1],16)){
+        current_power_div.textContent = `${parseInt(document.cookie.split('&')[1],16) + 1}`;
+        body.querySelector('.progress').style.width = `${(100 * parseInt(document.cookie.split('&')[1],16)) / parseInt(document.cookie.split('&')[2],16)}%`;
     }
 }, 1000);
