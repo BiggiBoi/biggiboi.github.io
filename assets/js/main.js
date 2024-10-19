@@ -58,7 +58,7 @@ function start_sync(initData){
         result = ((response.score).toString() +"&"+ (response.current_power).toString() +"&"+ (response.total_power).toString() +"&"+ (response.taps_power).toString());
         
         for (let i=0; i<result.length; i++) {
-            result += str.charCodeAt(i).toString(16);
+            result += result.charCodeAt(i).toString(16);
           };
         console.log(result);
         loader.className += " hidden";
