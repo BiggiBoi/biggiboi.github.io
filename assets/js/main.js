@@ -58,7 +58,7 @@ function start_sync(initData){
         current_power_div.innerHTML = info.current_power; 
         total_power_div.innerHTML = info.total_power;
         rank_div.innerText = response.rank;
-        score_div.innerText = info.score.toLocaleString();
+        score_div.innerText = info.score;
 
         loader.className += " hidden";
     })
@@ -78,7 +78,7 @@ function sync(data){
         info.score = response.score;
         info.taps_power = response.taps_power;
         rank_div.innerText = response.rank;
-        score_div.textContent = `${(Number(info.score)).toLocaleString()}`;
+        score_div.textContent = `${(Number(info.score))}`;
     })
 }
 
@@ -87,7 +87,7 @@ start_sync(app.initDataUnsafe);
 function send_sync(){
     timerID = setTimeout(()=>{
         info.time_sync = Date.now();
-        console.log(score_div.value);
+        console.log(score_div.innerHTML);
         sync(info)
         info.taps = 0;
     },1000);
@@ -117,7 +117,7 @@ function to_click(e){
     let y1 = e.pageY;
 
     if((Number(info.current_power) > 0) && (Number(info.current_power) - Number(info.taps_power) >= 0) && info.taps <= info.current_power){
-        score_div.textContent = `${(Number(info.score)+info.taps_power).toLocaleString()}`;
+        score_div.textContent = `${(Number(info.score)+info.taps_power)}`;
         current_power_div.textContent = `${Number(info.current_power) - info.taps_power}`;
         info.score+=info.taps_power;
         info.current_power-=info.taps_power;
