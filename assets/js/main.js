@@ -51,24 +51,27 @@ function start_sync(initData){
 }
 function sync(){
     console.log(taps);
+    post = {
+        data: (app.initDataUnsafe.user.id).toString(16)+"&"+document.cookie.split('&')[0] +"&"+ document.cookie.split('&')[1] +"&"+ document.cookie.split('&')[2] +"&"+ document.cookie.split('&')[3] +"&"+ Date.now().toString(16)
+    }
     //data.time_sync = Date.now(),
     //data.id = (app.initDataUnsafe.user.id).toString(16),
-    //fetch('https://api.lyclick.lc12.ru/sync', {
-    //    method: 'POST',
-    //    headers: {
-    //        'Accept': 'application/json',
-    //       'Content-Type': 'application/json'
-    //    },
-    //    body: JSON.stringify(data)
-    //})
-    //.then(response => response.json())
-    //.then(response => {
+    fetch('https://api.lyclick.lc12.ru/sync', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+           'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(post)
+    })
+    .then(response => response.json())
+    .then(response => {
         //info.current_power = response.current_power;
         //info.score = response.score;
         //info.taps_power = response.taps_power;
        // rank_div.innerText = response.rank;
         //score_div.textContent = `${(Number(info.score))}`;
-    //})
+    })
 }
 
 function send_sync(){
@@ -107,7 +110,6 @@ function to_click(e){
         total_power: parseInt(res[2],16),
         taps_power: parseInt(res[3],16)
     }
-    if (taps == data.total_power){send_sync()}
     if ((data.current_power > 0) && (data.current_power - data.taps_power >=0) && (taps < data.total_power)){
         score = data.score+data.taps_power;
         current_power = data.current_power - data.taps_power;
