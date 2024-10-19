@@ -19,15 +19,6 @@ app.ready();
 app.expand();
 app.enableClosingConfirmation()
 
-let info = {
-    id: 0,
-    score: 0,
-    current_power: 0,
-    total_power: 0,
-    taps_power: 1,
-    taps:0,
-    time_sync: Date.now()
-}
 let timerID = '';
 let taps = 0;
 
@@ -58,34 +49,35 @@ function start_sync(initData){
         loader.className += " hidden";
     })
 }
-function sync(data){
-    data.time_sync = Date.now(),
-    data.id = (app.initDataUnsafe.user.id).toString(16),
-    fetch('https://api.lyclick.lc12.ru/sync', {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(response => {
+function sync(){
+    console.log(taps);
+    //data.time_sync = Date.now(),
+    //data.id = (app.initDataUnsafe.user.id).toString(16),
+    //fetch('https://api.lyclick.lc12.ru/sync', {
+    //    method: 'POST',
+    //    headers: {
+    //        'Accept': 'application/json',
+    //       'Content-Type': 'application/json'
+    //    },
+    //    body: JSON.stringify(data)
+    //})
+    //.then(response => response.json())
+    //.then(response => {
         //info.current_power = response.current_power;
         //info.score = response.score;
         //info.taps_power = response.taps_power;
        // rank_div.innerText = response.rank;
         //score_div.textContent = `${(Number(info.score))}`;
-    })
+    //})
 }
 
-function send_sync(user){
+function send_sync(){
     timerID = setTimeout(()=>{
         if (taps > 1){
             console.log(taps);
             //user.score = score_div.innerHTML;
         }
-        sync(user)
+        sync()
         taps = 0;
     },1000);
 }
@@ -127,16 +119,8 @@ function to_click(e){
         taps+=1;
         hint(x1,y1);
         document.cookie = ((score).toString(16) +"&"+ (current_power).toString(16) +"&"+ (data.total_power).toString(16) +"&"+ (data.taps_power).toString(16)+"&"+Date.now().toString(16));
+        sync();
     }
-    //if((Number(info.current_power) > 0) && (Number(info.current_power) - Number(info.taps_power) >= 0) && info.taps <= info.current_power){
-    //    score_div.textContent = `${score_div.innerHTML+info.taps_power}`;
-    //    current_power_div.textContent = `${Number(info.current_power) - info.taps_power}`;
-    //    info.score+=info.taps_power;
-    //    info.current_power-=info.taps_power;
-    //    info.taps +=1;
-    //    
-    //    send_sync(user);
-    //} 
     
     if(x < 150 & y < 150){
         image.style.transform = 'translate(-0.25rem, -0.25rem) scale(0.95) skewY(-5deg) skewX(5deg)';
@@ -157,6 +141,8 @@ function to_click(e){
     body.querySelector('.progress').style.width = `${(100 * info.current_power) / info.total_power}%`;
     
 }
+
+
 start_sync(app.initDataUnsafe);
 
 document.addEventListener("visibilitychange", () => {
