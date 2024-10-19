@@ -115,7 +115,7 @@ function to_click(e){
         taps+=1;
         hint(x1,y1);
         document.cookie = ((score).toString(16) +"&"+ (current_power).toString(16) +"&"+ (data.total_power).toString(16) +"&"+ (data.taps_power).toString(16)+"&"+Date.now().toString(16));
-        sync();
+        send_sync();
     }
     
     if(x < 150 & y < 150){
