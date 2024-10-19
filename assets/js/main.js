@@ -141,18 +141,18 @@ function to_click(e){
 
 start_sync(app.initDataUnsafe);
 
-document.addEventListener("visibilitychange", () => {
-    info.time_sync = Date.now();
-    //sync(info)
-});
-window.addEventListener("blur", e => {
-    info.time_sync = Date.now();
-    //sync(info)
-});
-window.addEventListener("unload", e => {
-    info.time_sync = Date.now();
-    //sync(info)
-});
+//document.addEventListener("visibilitychange", () => {
+//    info.time_sync = Date.now();
+//    //sync(info)
+//});
+///window.addEventListener("blur", e => {
+//    info.time_sync = Date.now();
+//    //sync(info)
+//});
+//window.addEventListener("unload", e => {
+//    info.time_sync = Date.now();
+//    //sync(info)
+//});
 image.addEventListener('click' , (e)=> {
     to_click(e)    
 });
