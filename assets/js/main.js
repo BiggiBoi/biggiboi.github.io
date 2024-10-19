@@ -119,7 +119,7 @@ function to_click(e){
         score: score_div.innerHTML
         
     }
-    document.cookie = ((response.score).toString(16) +"&"+ (response.current_power).toString(16) +"&"+ (response.total_power).toString(16) +"&"+ (response.taps_power).toString(16));
+    //document.cookie = ((response.score).toString(16) +"&"+ (response.current_power).toString(16) +"&"+ (response.total_power).toString(16) +"&"+ (response.taps_power).toString(16));
     res = document.cookie.split('&');
     data = {
         score: Number(res[0]),
