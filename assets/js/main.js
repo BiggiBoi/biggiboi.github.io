@@ -119,7 +119,7 @@ function to_click(e){
     let y1 = e.pageY;
 
     if((Number(info.current_power) > 0) && (Number(info.current_power) - Number(info.taps_power) >= 0) && info.taps <= info.current_power){
-        score_div.textContent = `${(Number(info.score)+info.taps_power)}`;
+        score_div.textContent = `${score_div.innerHTML+info.taps_power}`;
         current_power_div.textContent = `${Number(info.current_power) - info.taps_power}`;
         info.score+=info.taps_power;
         info.current_power-=info.taps_power;
