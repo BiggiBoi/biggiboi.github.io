@@ -73,10 +73,6 @@ function sync(){
 
 function send_sync(){
     timerID = setTimeout(()=>{
-        if (taps > 1){
-            console.log(taps);
-            //user.score = score_div.innerHTML;
-        }
         sync()
         taps = 0;
     },1000);
