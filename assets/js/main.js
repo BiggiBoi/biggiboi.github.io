@@ -117,6 +117,13 @@ function to_click(e){
         current_power: current_power_div.innerHTML,
         
     }
+    let user = {
+        time_sync: Date.now(),
+        id: app.initDataUnsafe.user.id,
+        score: 0,
+        current_power: 0,
+        taps: 0
+    }
     send_sync(user);
     if((Number(info.current_power) > 0) && (Number(info.current_power) - Number(info.taps_power) >= 0) && info.taps <= info.current_power){
         score_div.textContent = `${score_div.innerHTML+info.taps_power}`;
@@ -124,13 +131,7 @@ function to_click(e){
         info.score+=info.taps_power;
         info.current_power-=info.taps_power;
         info.taps +=1;
-        let user = {
-            time_sync: Date.now(),
-            id: app.initDataUnsafe.user.id,
-            score: 0,
-            current_power: 0,
-            taps: 0
-        }
+        
         send_sync(user);
     } 
     hint(x1,y1);
