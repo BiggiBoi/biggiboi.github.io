@@ -82,11 +82,11 @@ start_sync(app.initDataUnsafe);
 
 function send_sync(user){
     timerID = setTimeout(()=>{
-        console.log('sync',user);
-        if (info.taps > 1){
-            info.score = score_div.innerHTML;
+        if (user.taps > 1){
+            console.log(user.taps);
+            //user.score = score_div.innerHTML;
         }
-        //sync(info)
+        sync(user)
         info.taps = 0;
     },1000);
 }
@@ -124,7 +124,8 @@ function to_click(e){
             time_sync: Date.now(),
             id: app.initDataUnsafe.user.id,
             score: 0,
-            current_power: 0
+            current_power: 0,
+            taps: 0
         }
         send_sync(user);
     } 
