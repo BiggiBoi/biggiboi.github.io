@@ -28,8 +28,8 @@ let info = {
     taps:0,
     time_sync: Date.now()
 }
-let clan = '';
 let timerID = '';
+let taps = 0;
 
 
 function start_sync(initData){
@@ -121,7 +121,7 @@ function to_click(e){
         taps_power: parseInt(res[3],16)
     }
     send_sync(user);
-    if (data.current_power > 0 && (data.current_power - data.tap_power) >= 0 && info.taps <= data.current_power){
+    if (data.current_power > 0 && (data.current_power - data.tap_power) >= 0 && taps <= data.current_power){
         score_div.textContent = `${data.score+data.taps_power}`;
         console.log('click');
     }
