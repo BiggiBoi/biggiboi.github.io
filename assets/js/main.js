@@ -113,16 +113,10 @@ function to_click(e){
     let y = e.offsetY;
     let x1 = e.pageX;
     let y1 = e.pageY;
-    let data = {
-        current_power: current_power_div.innerHTML,
-        total_power: total_power_div.innerHTML,
-        score: score_div.innerHTML
-        
-    }
     //document.cookie = ((response.score).toString(16) +"&"+ (response.current_power).toString(16) +"&"+ (response.total_power).toString(16) +"&"+ (response.taps_power).toString(16));
     res = document.cookie.split('&');
     data = {
-        score: Number(res[0]),
+        score: parseInt(res[0],16),
         current_power: Number(res[1]),
         total_power: Number(res[2]),
         taps_power: Number(res[3])
