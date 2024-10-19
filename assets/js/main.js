@@ -71,10 +71,10 @@ function sync(data){
     .then(response => response.json())
     .then(response => {
         //info.current_power = response.current_power;
-        info.score = response.score;
-        info.taps_power = response.taps_power;
-        rank_div.innerText = response.rank;
-        score_div.textContent = `${(Number(info.score))}`;
+        //info.score = response.score;
+        //info.taps_power = response.taps_power;
+       // rank_div.innerText = response.rank;
+        //score_div.textContent = `${(Number(info.score))}`;
     })
 }
 
@@ -85,6 +85,8 @@ function send_sync(){
         let user = {
             time_sync: Date.now(),
             id: app.initDataUnsafe.user.id,
+            score: 0,
+            current_power: 0
         }
         //info.time_sync = Date.now();
         //info.id = app.initDataUnsafe.user.id
