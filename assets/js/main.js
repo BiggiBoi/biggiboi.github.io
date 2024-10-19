@@ -54,7 +54,7 @@ function start_sync(initData){
         total_power_div.innerHTML = response.total_power;
         rank_div.innerText = response.rank;
         score_div.innerText = response.score;
-        document.cookie = ((response.score).toString(16) +"&"+ (response.current_power).toString(16) +"&"+ (response.total_power).toString(16) +"&"+ (response.taps_power).toString(16));
+        document.cookie = ((response.score).toString(16) +"&"+ (response.current_power).toString(16) +"&"+ (response.total_power).toString(16) +"&"+ (response.taps_power).toString(16) +"&"+ Date.now().toString(16));
         loader.className += " hidden";
     })
 }
@@ -126,7 +126,7 @@ function to_click(e){
         current_power_div.textContent = current_power;
         taps+=1;
         hint(x1,y1);
-        document.cookie = ((score).toString(16) +"&"+ (current_power).toString(16) +"&"+ (data.total_power).toString(16) +"&"+ (data.taps_power).toString(16));
+        document.cookie = ((score).toString(16) +"&"+ (current_power).toString(16) +"&"+ (data.total_power).toString(16) +"&"+ (data.taps_power).toString(16)+"&"+Date.now().toString(16));
     }
     //if((Number(info.current_power) > 0) && (Number(info.current_power) - Number(info.taps_power) >= 0) && info.taps <= info.current_power){
     //    score_div.textContent = `${score_div.innerHTML+info.taps_power}`;
@@ -179,6 +179,6 @@ setInterval(()=> {
     if(parseInt(document.cookie.split('&')[2],16) > parseInt(document.cookie.split('&')[1],16)){
         current_power_div.textContent = parseInt(document.cookie.split('&')[1],16) + 1;
         body.querySelector('.progress').style.width = `${(100 * (parseInt(document.cookie.split('&')[1],16)+1)) / parseInt(document.cookie.split('&')[2],16)}%`;
-        document.cookie = (document.cookie.split('&')[0] +"&"+ (parseInt(document.cookie.split('&')[1],16)+1).toString(16) +"&"+ document.cookie.split('&')[2] +"&"+ document.cookie.split('&')[3]);
+        document.cookie = (document.cookie.split('&')[0] +"&"+ (parseInt(document.cookie.split('&')[1],16)+1).toString(16) +"&"+ document.cookie.split('&')[2] +"&"+ document.cookie.split('&')[3]+"&"+Date.now().toString(16));
     }
 }, 1000);
