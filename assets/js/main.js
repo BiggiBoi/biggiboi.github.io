@@ -117,9 +117,9 @@ function to_click(e){
     res = document.cookie.split('&');
     data = {
         score: parseInt(res[0],16),
-        current_power: Number(res[1]),
-        total_power: Number(res[2]),
-        taps_power: Number(res[3])
+        current_power: parseInt(res[1],16),
+        total_power: parseInt(res[2],16),
+        taps_power: parseInt(res[3],16)
     }
     console.log(data);
     let user = {
