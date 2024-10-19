@@ -255,6 +255,24 @@ a:active {
     display: flex;
     align-items: center;
 }
+.l-knopka-cont{
+    display: flex;
+    height: 2rem;
+    margin-bottom: 1.25rem;
+}
+.l-knopka{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    border-radius: 15px;
+    margin: 0 .3rem;
+    background-color: rgba(50, 49, 49, 0.3);
+    border: 2px solid rgb(43, 42, 42, 0.05);
+}
+.l-knopka-active{
+    border: 2px solid rgb(255 255 255 / 50%) !important;
+}
 .click-hint{
     position: fixed;
     width: 100%;

@@ -59,7 +59,7 @@ function start_sync(initData){
         current_power_div.innerHTML = info.current_power; 
         total_power_div.innerHTML = info.total_power;
         rank_div.innerText = response.rank;
-        score_div.innerText = info.score;
+        score_div.innerText = info.score.toLocaleString();
 
         loader.className += " hidden";
     })
@@ -117,7 +117,7 @@ function to_click(e){
     let x1 = e.pageX;
     let y1 = e.pageY;
 
-    if((Number(info.current_power) > 0) && (Number(info.current_power) - Number(info.taps_power) >= 0)){
+    if((Number(info.current_power) > 0) && (Number(info.current_power) - Number(info.taps_power) >= 0) && info.taps <= info.current_power){
         score_div.textContent = `${(Number(info.score)+info.taps_power).toLocaleString()}`;
         current_power_div.textContent = `${Number(info.current_power) - info.taps_power}`;
         info.score+=info.taps_power;
