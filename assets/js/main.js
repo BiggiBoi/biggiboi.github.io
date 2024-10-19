@@ -43,9 +43,9 @@ function start_sync(initData){
     })
     .then(response => response.json())
     .then(response => {
-        info.current_power = response.current_power;
-        info.total_power = response.total_power;
-        info.score = response.score;
+        //info.current_power = response.current_power;
+        //info.total_power = response.total_power;
+        //info.score = response.score;
         info.id = response.telegram_id;
         info.taps_power = response.taps_power;
         if (response.clan == null){
@@ -55,10 +55,10 @@ function start_sync(initData){
         }
         clan_div.innerText = clan;
         nickname.innerText = response.username;
-        current_power_div.innerHTML = info.current_power; 
-        total_power_div.innerHTML = info.total_power;
+        current_power_div.innerHTML = response.current_power; 
+        total_power_div.innerHTML = response.total_power;
         rank_div.innerText = response.rank;
-        score_div.innerText = info.score;
+        score_div.innerText = response.score;
 
         loader.className += " hidden";
     })
@@ -87,7 +87,9 @@ start_sync(app.initDataUnsafe);
 function send_sync(){
     timerID = setTimeout(()=>{
         info.time_sync = Date.now();
-        console.log(score_div.innerHTML);
+        if (info.taps > 1){
+            info.score = score_div.innerHTML;
+        }
         sync(info)
         info.taps = 0;
     },1000);
