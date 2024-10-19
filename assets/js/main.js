@@ -82,12 +82,12 @@ function sync(data){
 
 function send_sync(user){
     timerID = setTimeout(()=>{
-        if (user.taps > 1){
-            console.log(user.taps);
+        if (taps > 1){
+            console.log(taps);
             //user.score = score_div.innerHTML;
         }
         sync(user)
-        info.taps = 0;
+        taps = 0;
     },1000);
 }
 
@@ -123,6 +123,7 @@ function to_click(e){
     send_sync(user);
     if (data.current_power > 0 && (data.current_power - data.tap_power) >= 0 && taps <= data.current_power){
         score_div.textContent = `${data.score+data.taps_power}`;
+        taps+=1;
         console.log('click');
     }
     //if((Number(info.current_power) > 0) && (Number(info.current_power) - Number(info.taps_power) >= 0) && info.taps <= info.current_power){
