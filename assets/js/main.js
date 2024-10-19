@@ -127,6 +127,7 @@ function to_click(e){
         total_power: Number(res[2]),
         taps_power: Number(res[3])
     }
+    console.log(data);
     let user = {
         time_sync: 0,
         id: 0,
