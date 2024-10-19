@@ -80,16 +80,8 @@ function sync(data){
 
 start_sync(app.initDataUnsafe);
 
-function send_sync(){
+function send_sync(user){
     timerID = setTimeout(()=>{
-        let user = {
-            time_sync: Date.now(),
-            id: app.initDataUnsafe.user.id,
-            score: 0,
-            current_power: 0
-        }
-        //info.time_sync = Date.now();
-        //info.id = app.initDataUnsafe.user.id
         console.log('sync',user);
         if (info.taps > 1){
             info.score = score_div.innerHTML;
@@ -127,8 +119,14 @@ function to_click(e){
         current_power_div.textContent = `${Number(info.current_power) - info.taps_power}`;
         info.score+=info.taps_power;
         info.current_power-=info.taps_power;
-        info.taps +=1; 
-        send_sync();
+        info.taps +=1;
+        let user = {
+            time_sync: Date.now(),
+            id: app.initDataUnsafe.user.id,
+            score: 0,
+            current_power: 0
+        }
+        send_sync(user);
     } 
     hint(x1,y1);
     if(x < 150 & y < 150){
