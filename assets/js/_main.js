@@ -120,6 +120,10 @@ function to_click(e){
         document.cookie = ((score).toString(16) +"&"+ (current_power).toString(16) +"&"+ (data.total_power).toString(16) +"&"+ (data.taps_power).toString(16)+"&"+Date.now().toString(16));
         send_sync();
     }
+    if (data.current_power == 0){
+        console.log('тапаешь часто')
+        send_sync()
+    }
     
     if(x < 150 & y < 150){
         image.style.transform = 'translate(-0.25rem, -0.25rem) scale(0.95) skewY(-5deg) skewX(5deg)';
