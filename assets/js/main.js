@@ -107,7 +107,7 @@ function to_click(e){
         total_power: parseInt(res[2],16),
         taps_power: parseInt(res[3],16)
     }
-    if ((data.current_power > 0) && (data.current_power - data.taps_power >=0) && (taps+1 <= data.total_power)){
+    if ((data.current_power > 0) && (data.current_power - data.taps_power >=0) && (taps < data.total_power)){
         score = data.score+data.taps_power;
         current_power = data.current_power - data.taps_power;
         score_div.textContent = `${score}`;
