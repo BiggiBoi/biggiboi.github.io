@@ -59,7 +59,7 @@ function start_sync(initData){
         
         for (let i=0; i<result.length; i++) {
             result += result.charCodeAt(i).toString(16);
-          };
+          }
         console.log(result);
         loader.className += " hidden";
     })
