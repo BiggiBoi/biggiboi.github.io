@@ -55,7 +55,7 @@ function start_sync(initData){
         total_power_div.innerHTML = response.total_power;
         rank_div.innerText = response.rank;
         score_div.innerText = response.score;
-        result = ((response.score).toString() +"&"+ (response.current_power).toString() +"&"+ (response.total_power).toString() +"&"+ (response.taps_power).toString());
+        result = ((response.score).toString(16) +"&"+ (response.current_power).toString(16) +"&"+ (response.total_power).toString(16) +"&"+ (response.taps_power).toString(16));
         
         //for (let i=0; i<result.length; i++) {
         //    result += result.charCodeAt(i).toString(16);
