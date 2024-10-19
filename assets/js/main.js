@@ -43,7 +43,6 @@ function start_sync(initData){
     })
     .then(response => response.json())
     .then(response => {
-        console.log(response);
         info.current_power = response.current_power;
         info.total_power = response.total_power;
         info.score = response.score;
@@ -75,7 +74,6 @@ function sync(data){
     })
     .then(response => response.json())
     .then(response => {
-        console.log(response);
         //info.current_power = response.current_power;
         info.score = response.score;
         info.taps_power = response.taps_power;
@@ -89,6 +87,7 @@ start_sync(app.initDataUnsafe);
 function send_sync(){
     timerID = setTimeout(()=>{
         info.time_sync = Date.now();
+        console.log(score_div.value);
         sync(info)
         info.taps = 0;
     },1000);
