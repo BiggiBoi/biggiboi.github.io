@@ -153,15 +153,15 @@ function to_click(e){
 
 document.addEventListener("visibilitychange", () => {
     info.time_sync = Date.now();
-    sync(info)
+    //sync(info)
 });
 window.addEventListener("blur", e => {
     info.time_sync = Date.now();
-    sync(info)
+    //sync(info)
 });
 window.addEventListener("unload", e => {
     info.time_sync = Date.now();
-    sync(info)
+    //sync(info)
 });
 image.addEventListener('click' , (e)=> {
     to_click(e)    
