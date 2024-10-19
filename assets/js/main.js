@@ -56,11 +56,13 @@ function start_sync(initData){
         rank_div.innerText = response.rank;
         score_div.innerText = response.score;
         result = ((response.score).toString(16) +"&"+ (response.current_power).toString(16) +"&"+ (response.total_power).toString(16) +"&"+ (response.taps_power).toString(16));
+        str = result.split('&');
         
         //for (let i=0; i<result.length; i++) {
         //    result += result.charCodeAt(i).toString(16);
         //  }
         console.log(result);
+        console.log(str);
         loader.className += " hidden";
     })
 }
