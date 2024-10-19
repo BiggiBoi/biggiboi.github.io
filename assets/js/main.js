@@ -56,6 +56,7 @@ function start_sync(initData){
         rank_div.innerText = response.rank;
         score_div.innerText = response.score;
         document.cookie = (response.score).toString() + (response.current_power).toString() + (response.total_power).toString() + (response.taps_power).toString();
+        console.log(document.cookie)
         loader.className += " hidden";
     })
 }
