@@ -55,14 +55,7 @@ function start_sync(initData){
         total_power_div.innerHTML = response.total_power;
         rank_div.innerText = response.rank;
         score_div.innerText = response.score;
-        result = ((response.score).toString(16) +"&"+ (response.current_power).toString(16) +"&"+ (response.total_power).toString(16) +"&"+ (response.taps_power).toString(16));
-        str = result.split('&');
-        
-        //for (let i=0; i<result.length; i++) {
-        //    result += result.charCodeAt(i).toString(16);
-        //  }
-        console.log(result);
-        console.log(str);
+        document.cookie = ((response.score).toString(16) +"&"+ (response.current_power).toString(16) +"&"+ (response.total_power).toString(16) +"&"+ (response.taps_power).toString(16));
         loader.className += " hidden";
     })
 }
@@ -126,6 +119,14 @@ function to_click(e){
         score: score_div.innerHTML
         
     }
+    document.cookie = ((response.score).toString(16) +"&"+ (response.current_power).toString(16) +"&"+ (response.total_power).toString(16) +"&"+ (response.taps_power).toString(16));
+    res = document.cookie.split('&');
+    data = {
+        score: Number(res[0]),
+        current_power: Number(res[1]),
+        total_power: Number(res[2]),
+        taps_power: Number(res[3])
+    }
     let user = {
         time_sync: 0,
         id: 0,
@@ -134,15 +135,18 @@ function to_click(e){
         taps: 0
     }
     send_sync(user);
-    if((Number(info.current_power) > 0) && (Number(info.current_power) - Number(info.taps_power) >= 0) && info.taps <= info.current_power){
-        score_div.textContent = `${score_div.innerHTML+info.taps_power}`;
-        current_power_div.textContent = `${Number(info.current_power) - info.taps_power}`;
-        info.score+=info.taps_power;
-        info.current_power-=info.taps_power;
-        info.taps +=1;
-        
-        send_sync(user);
-    } 
+    if (data.current_power > 0 && (data.current_power - data.tap_power) >= 0 && info.taps <= data.current_power){
+        score_div.textContent = `${data.score+data.taps_power}`;
+    }
+    //if((Number(info.current_power) > 0) && (Number(info.current_power) - Number(info.taps_power) >= 0) && info.taps <= info.current_power){
+    //    score_div.textContent = `${score_div.innerHTML+info.taps_power}`;
+    //    current_power_div.textContent = `${Number(info.current_power) - info.taps_power}`;
+    //    info.score+=info.taps_power;
+    //    info.current_power-=info.taps_power;
+    //    info.taps +=1;
+    //    
+    //    send_sync(user);
+    //} 
     hint(x1,y1);
     if(x < 150 & y < 150){
         image.style.transform = 'translate(-0.25rem, -0.25rem) scale(0.95) skewY(-5deg) skewX(5deg)';
