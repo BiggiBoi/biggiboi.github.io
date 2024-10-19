@@ -119,12 +119,13 @@ function to_click(e){
         total_power: parseInt(res[2],16),
         taps_power: parseInt(res[3],16)
     }
-    if (data.current_power > 0){
+    if ((data.current_power > 0) && (data.current_power - data.taps_power >=0)){
         score = data.score+data.taps_power;
         current_power = data.current_power - data.taps_power;
         score_div.textContent = `${score}`;
         current_power_div.textContent = current_power;
         taps+=1;
+        hint(x1,y1);
         document.cookie = ((score).toString(16) +"&"+ (current_power).toString(16) +"&"+ (data.total_power).toString(16) +"&"+ (data.taps_power).toString(16));
     }
     //if((Number(info.current_power) > 0) && (Number(info.current_power) - Number(info.taps_power) >= 0) && info.taps <= info.current_power){
@@ -136,7 +137,7 @@ function to_click(e){
     //    
     //    send_sync(user);
     //} 
-    hint(x1,y1);
+    
     if(x < 150 & y < 150){
         image.style.transform = 'translate(-0.25rem, -0.25rem) scale(0.95) skewY(-5deg) skewX(5deg)';
     }
