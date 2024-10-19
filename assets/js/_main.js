@@ -19,17 +19,8 @@ app.ready();
 app.expand();
 app.enableClosingConfirmation()
 
-let info = {
-    id: 0,
-    score: 0,
-    current_power: 0,
-    total_power: 0,
-    taps_power: 1,
-    taps:0,
-    time_sync: Date.now()
-}
-let clan = '';
 let timerID = '';
+let taps = 0;
 
 
 function start_sync(initData){
@@ -43,10 +34,6 @@ function start_sync(initData){
     })
     .then(response => response.json())
     .then(response => {
-        info.current_power = response.current_power;
-        info.total_power = response.total_power;
-        info.score = response.score;
-        info.id = response.telegram_id;
         if (response.clan == null){
             clan = '?';
         } else {
@@ -54,55 +41,86 @@ function start_sync(initData){
         }
         clan_div.innerText = clan;
         nickname.innerText = response.username;
-        current_power_div.innerHTML = info.current_power; 
-        total_power_div.innerHTML = info.total_power;
+        current_power_div.innerHTML = response.current_power; 
+        total_power_div.innerHTML = response.total_power;
         rank_div.innerText = response.rank;
-        score_div.innerText = info.score;
-
+        score_div.innerText = response.score;
+        document.cookie = ((response.score).toString(16) +"&"+ (response.current_power).toString(16) +"&"+ (response.total_power).toString(16) +"&"+ (response.taps_power).toString(16) +"&"+ Date.now().toString(16));
         loader.className += " hidden";
     })
 }
-function sync(data){
+function sync(){
+    console.log(taps);
+    post = {
+        data: (app.initDataUnsafe.user.id).toString(16)+"&"+document.cookie.split('&')[0] +"&"+ document.cookie.split('&')[1] +"&"+ document.cookie.split('&')[2] +"&"+ document.cookie.split('&')[3] +"&"+ Date.now().toString(16)
+    }
+    //data.time_sync = Date.now(),
+    //data.id = (app.initDataUnsafe.user.id).toString(16),
     fetch('https://api.lyclick.lc12.ru/sync', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(post)
     })
     .then(response => response.json())
     .then(response => {
-        info.score = response.score;
-        rank_div.innerText = response.rank;
-        score_div.textContent = `${(Number(info.score)).toLocaleString()}`;
+        //info.current_power = response.current_power;
+        //info.score = response.score;
+        //info.taps_power = response.taps_power;
+       // rank_div.innerText = response.rank;
+        //score_div.textContent = `${(Number(info.score))}`;
     })
 }
 
-start_sync(app.initDataUnsafe);
-
 function send_sync(){
     timerID = setTimeout(()=>{
-        info.time_sync = Date.now();
-        sync(info)
-        info.taps = 0;
+        sync()
+        taps = 0;
     },1000);
+}
+
+function hint(x, y){
+    let hint_div = document.querySelector('.click-hint');
+    let hint = document.createElement("div");
+    hint.classList.add('hint');
+    hint.innerText = '+'+ parseInt(document.cookie.split('&')[3]),16;
+    hint.style.top = y;
+    hint.style.left = x;
+    hint.style.visibility = 'visible';
+    hint_div.appendChild(hint);
+    hint.classList.add('hint-animation');
+    setTimeout(()=>{
+        hint.style = 'visibility: hidden; opacity: 0; translate(-50%, -50%) translateY(-120px)';
+        hint.remove();
+    }, 500);
 }
 
 function to_click(e){
     clearTimeout(timerID);
     let x = e.offsetX;
     let y = e.offsetY;
-
-    if(Number(info.current_power) > 0){
-        score_div.textContent = `${(Number(info.score)+info.taps_power)}`;
-        current_power_div.textContent = `${Number(info.current_power) - info.taps_power}`;
-        info.score+=info.taps_power;
-        info.current_power-=info.taps_power;
-        info.taps +=1; 
+    let x1 = e.pageX;
+    let y1 = e.pageY;
+    res = document.cookie.split('&');
+    data = {
+        score: parseInt(res[0],16),
+        current_power: parseInt(res[1],16),
+        total_power: parseInt(res[2],16),
+        taps_power: parseInt(res[3],16)
+    }
+    if ((data.current_power > 0) && (data.current_power - data.taps_power >=0) && (taps < data.total_power)){
+        score = data.score+data.taps_power;
+        current_power = data.current_power - data.taps_power;
+        score_div.textContent = `${score}`;
+        current_power_div.textContent = current_power;
+        taps+=1;
+        hint(x1,y1);
+        document.cookie = ((score).toString(16) +"&"+ (current_power).toString(16) +"&"+ (data.total_power).toString(16) +"&"+ (data.taps_power).toString(16)+"&"+Date.now().toString(16));
         send_sync();
-    } 
-
+    }
+    
     if(x < 150 & y < 150){
         image.style.transform = 'translate(-0.25rem, -0.25rem) scale(0.95) skewY(-5deg) skewX(5deg)';
     }
@@ -119,30 +137,33 @@ function to_click(e){
         image.style.transform = 'translate(0px, 0px) scale(1)';
     }, 100);
 
-    body.querySelector('.progress').style.width = `${(100 * info.current_power) / info.total_power}%`;
+    body.querySelector('.progress').style.width = `${(100 * current_power) / data.total_power}%`;
     
 }
 
-document.addEventListener("visibilitychange", () => {
-    info.time_sync = Date.now();
-    sync(info)
-});
-window.addEventListener("blur", e => {
-    info.time_sync = Date.now();
-    sync(info)
-});
-window.addEventListener("unload", e => {
-    info.time_sync = Date.now();
-    sync(info)
-});
+
+start_sync(app.initDataUnsafe);
+
+//document.addEventListener("visibilitychange", () => {
+//    info.time_sync = Date.now();
+//    //sync(info)
+//});
+///window.addEventListener("blur", e => {
+//    info.time_sync = Date.now();
+//    //sync(info)
+//});
+//window.addEventListener("unload", e => {
+//    info.time_sync = Date.now();
+//    //sync(info)
+//});
 image.addEventListener('click' , (e)=> {
     to_click(e)    
 });
 
 setInterval(()=> {
-    if(Number(info.total_power) > info.current_power){
-        current_power_div.textContent = `${Number(info.current_power) + Number(info.taps_power)}`;
-        info.current_power+=info.taps_power;
-        body.querySelector('.progress').style.width = `${(100 * info.current_power) / info.total_power}%`;
+    if(parseInt(document.cookie.split('&')[2],16) > parseInt(document.cookie.split('&')[1],16)){
+        current_power_div.textContent = parseInt(document.cookie.split('&')[1],16) + 1;
+        body.querySelector('.progress').style.width = `${(100 * (parseInt(document.cookie.split('&')[1],16)+1)) / parseInt(document.cookie.split('&')[2],16)}%`;
+        document.cookie = (document.cookie.split('&')[0] +"&"+ (parseInt(document.cookie.split('&')[1],16)+1).toString(16) +"&"+ document.cookie.split('&')[2] +"&"+ document.cookie.split('&')[3]+"&"+Date.now().toString(16));
     }
 }, 1000);
