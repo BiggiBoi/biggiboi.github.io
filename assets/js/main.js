@@ -95,7 +95,7 @@ function hint(x, y){
     let hint_div = document.querySelector('.click-hint');
     let hint = document.createElement("div");
     hint.classList.add('hint');
-    hint.innerText = '+'+info.taps_power;
+    hint.innerText = '+'+ parseInt(document.cookie.split('&')[3]),16;
     hint.style.top = y;
     hint.style.left = x;
     hint.style.visibility = 'visible';
@@ -119,14 +119,6 @@ function to_click(e){
         current_power: parseInt(res[1],16),
         total_power: parseInt(res[2],16),
         taps_power: parseInt(res[3],16)
-    }
-    console.log(data);
-    let user = {
-        time_sync: 0,
-        id: 0,
-        score: 0,
-        current_power: 0,
-        taps: 0
     }
     send_sync(user);
     if (data.current_power > 0 && (data.current_power - data.tap_power) >= 0 && info.taps <= data.current_power){
