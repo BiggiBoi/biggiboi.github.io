@@ -177,7 +177,7 @@ image.addEventListener('click' , (e)=> {
 setInterval(()=> {
     if(parseInt(document.cookie.split('&')[2],16) > parseInt(document.cookie.split('&')[1],16)){
         current_power_div.textContent = parseInt(document.cookie.split('&')[1],16) + 1;
-        body.querySelector('.progress').style.width = `${(100 * parseInt(document.cookie.split('&')[1],16)) / parseInt(document.cookie.split('&')[2],16)}%`;
-        document.cookie = (parseInt(document.cookie.split('&')[0],16) +"&"+ parseInt(document.cookie.split('&')[1],16) +"&"+ parseInt(document.cookie.split('&')[2],16) +"&"+ parseInt(document.cookie.split('&')[3],16));
+        body.querySelector('.progress').style.width = `${(100 * (parseInt(document.cookie.split('&')[1],16)+1)) / parseInt(document.cookie.split('&')[2],16)}%`;
+        document.cookie = (parseInt(document.cookie.split('&')[0],16) +"&"+ (parseInt(document.cookie.split('&')[1],16)+1) +"&"+ parseInt(document.cookie.split('&')[2],16) +"&"+ parseInt(document.cookie.split('&')[3],16));
     }
 }, 1000);
