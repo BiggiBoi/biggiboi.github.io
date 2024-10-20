@@ -30,6 +30,7 @@
             });
             app.enableClosingConfirmation();
             let leaderboard = document.querySelector('.leaderboard');
+            const loader = document.querySelector(".loader");
 
             function start(){
                 fetch('https://api.lyclick.lc12.ru/clan', {
@@ -42,11 +43,9 @@
                 })
                 .then(response => response.json())
                 .then(response => {
-                    console.log(response.invite);
                     if (response.invite){
                         
                         for (clan of response.clans){
-                            console.log(clan)
                             let tableRow = document.createElement("div");
                             tableRow.classList.add("table-row");
                             tableRow.innerHTML = '<div class="l-container"><span>'+clan.clan_name+'</span></div><div class="l-score"><button type="button" class="btn" value="'+clan.clan_name+'" onclick="btn_click(this)">Вступить</button></div>';
@@ -56,7 +55,6 @@
                     }
                     else{
                         for (clan of response.clans){
-                            console.log('else');
                             let tableRow = document.createElement("div");
                             tableRow.classList.add("table-row");
                             tableRow.innerHTML = '<div class="l-container"><span class="l-username">'+clan.username+'</span><span class="l-rank">'+clan.rank+'</span></div><div class="l-score">'+clan.score+'</div>';
