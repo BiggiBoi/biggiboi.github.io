@@ -12,27 +12,65 @@
 	</head>
 	<body class="bg-secondary">
         <div class="headers">
-            <span>Мой класс</span>
+            <span class="clan-name">Мой класс</span>
         </div>
-        <script src="assets/js/main.js"></script>
+        <div class="leaderboarsd">
+            <div class="table-row">
+                <div class="l-r">
+                    <div class="l-num">#1</div>
+                    <div class="l-container">
+                        <span class="l-username">108</span>
+                        <span class="l-rank">хорошист</span>
+                    </div>
+                </div>
+                <div class="l-score">108108</div></div>
+        </div>
+        <div class="leaderboard"></div>
         <script>
+            const app = Telegram.WebApp;
+            app.ready();
+            app.expand();
+            app.enableClosingConfirmation()
             app.BackButton.show();
             app.BackButton.onClick(function() {
                 app.BackButton.hide();
                 history.back()
             });
             app.enableClosingConfirmation();
-            const body = { "count": 1 };
-            fetch('https://api.lyclick.lc12.ru/clan', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(body)
-            })
-            .then(response => response.json())
-            .then(response => {});
+            let leaderboard = document.querySelector('.leaderboard');
+
+            function start(){
+                const body = { 
+                    "id": app.initDataUnsafe.user.id,
+                    "clan_name": clan_name,
+                };
+                fetch('https://api.lyclick.lc12.ru/clan', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                })
+                .then(response => response.json())
+                .then(response => {
+                    console.log(response)
+                    let tableRow = document.createElement("div");
+                    tableRow.classList.add("table-row");
+                    tableRow.innerHTML = '<div class="l-container"><span>'+clan.clan_name+'</span></div><div class="l-score"><button type="button" class="btn" value="'+clan.clan_name+'" onclick="btn_click(this)">Вступить</button></div>';
+                    leaderboard.appendChild(tableRow);
+                });
+            }
+
+            function btn_click(clan){
+                console.log(clan.value)
+            }
+
+            
+            for (let clan = 0; clan < 140; clan++) {
+                
+            }
+            
         </script>
 	</body>
 </html>
