@@ -52,11 +52,13 @@
                 .then(response => response.json())
                 .then(response => {
                     console.log(response)
-                    for (clan of response){
-                        let tableRow = document.createElement("div");
-                        tableRow.classList.add("table-row");
-                        tableRow.innerHTML = '<div class="l-container"><span>'+clan.clan_name+'</span></div><div class="l-score"><button type="button" class="btn" value="'+clan.clan_name+'" onclick="btn_click(this)">Вступить</button></div>';
-                        leaderboard.appendChild(tableRow);
+                    if (Array.isArray(response)){
+                        for (clan of response){
+                            let tableRow = document.createElement("div");
+                            tableRow.classList.add("table-row");
+                            tableRow.innerHTML = '<div class="l-container"><span>'+clan.clan_name+'</span></div><div class="l-score"><button type="button" class="btn" value="'+clan.clan_name+'" onclick="btn_click(this)">Вступить</button></div>';
+                            leaderboard.appendChild(tableRow);
+                        }
                     }
                 });
             }
