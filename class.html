@@ -63,7 +63,7 @@
                         for (clan of response.clans){
                             let tableRow = document.createElement("div");
                             tableRow.classList.add("table-row");
-                            tableRow.innerHTML = '<div class="l-container"><span>'+clan.clan_name+'</span></div><div class="l-score"><button type="button" class="btn" value="'+clan.clan_name+'" onclick="btn_click(this)">Вступить</button></div>';
+                            tableRow.innerHTML = '<div class="l-container"><span class="l-username">'+clan.username+'</span><span class="l-rank">'+clan.rank+'</span></div><div class="l-score">'+clan.score+'</div>';
                             leaderboard.appendChild(tableRow);
                         }
                     }
