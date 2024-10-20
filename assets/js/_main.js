@@ -158,7 +158,7 @@ window.addEventListener("unload", e => {
     //sync()
 });
 image.addEventListener('click' , (e)=> {
-    to_click(e)    
+    //to_click(e)    
 });
 
 setInterval(()=> {
