@@ -40,8 +40,9 @@
                 })
                 .then(response => response.json())
                 .then(response => {
-                    console.log(response)
+                    
                     if (response.invite == true){
+                        console.log(response)
                         for (clan of response.clans){
                             let tableRow = document.createElement("div");
                             tableRow.classList.add("table-row");
