@@ -41,7 +41,7 @@
                 .then(response => response.json())
                 .then(response => {
                     
-                    if (response.invite === true){
+                    if (response.invite == 'yes'){
                         
                         for (clan of response.clans){
                             console.log(clan)
