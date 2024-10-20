@@ -68,6 +68,7 @@
             start()
             function btn_click(clan){
                 loader.className = "loader";
+                leaderboard.textContent = '';
                 let data = {
                     "ids": app.initDataUnsafe.user.id,
                     "clan": clan.value
@@ -83,6 +84,7 @@
                 .then(response => response.json())
                 .then(response => {
                     console.log(response.invite);
+                    start();
                 });
             }
             
