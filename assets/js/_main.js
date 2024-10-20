@@ -149,13 +149,13 @@ function to_click(e){
 start_sync(app.initDataUnsafe);
 
 document.addEventListener("visibilitychange", () => {
-    sync()
+    //sync()
 });
 window.addEventListener("blur", e => {
-    sync()
+    //sync()
 });
 window.addEventListener("unload", e => {
-    sync()
+    //sync()
 });
 image.addEventListener('click' , (e)=> {
     to_click(e)    
