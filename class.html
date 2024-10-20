@@ -41,10 +41,6 @@
             let clan_name = '';
 
             function start(){
-                const body = { 
-                    "id": app.initDataUnsafe.user.id,
-                    "clan_name": clan_name,
-                };
                 fetch('https://api.lyclick.lc12.ru/clan', {
                     method: 'POST',
                     headers: {
@@ -56,10 +52,12 @@
                 .then(response => response.json())
                 .then(response => {
                     console.log(response)
-                    let tableRow = document.createElement("div");
-                    tableRow.classList.add("table-row");
-                    tableRow.innerHTML = '<div class="l-container"><span>'+response.clan_name+'</span></div><div class="l-score"><button type="button" class="btn" value="'+response.clan_name+'" onclick="btn_click(this)">Вступить</button></div>';
-                    leaderboard.appendChild(tableRow);
+                    for (clan of response){
+                        let tableRow = document.createElement("div");
+                        tableRow.classList.add("table-row");
+                        tableRow.innerHTML = '<div class="l-container"><span>'+clan.clan_name+'</span></div><div class="l-score"><button type="button" class="btn" value="'+clan.clan_name+'" onclick="btn_click(this)">Вступить</button></div>';
+                        leaderboard.appendChild(tableRow);
+                    }
                 });
             }
 
