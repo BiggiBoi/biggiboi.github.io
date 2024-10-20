@@ -15,6 +15,9 @@
             <span class="clan-name">Мой класс</span>
         </div>
         <div class="leaderboard"></div>
+        <div class="loader">
+            <img src="assets/img/loader.gif" alt="load"/>
+        </div>
         <script>
             const app = Telegram.WebApp;
             app.ready();
@@ -48,6 +51,7 @@
                             tableRow.classList.add("table-row");
                             tableRow.innerHTML = '<div class="l-container"><span>'+clan.clan_name+'</span></div><div class="l-score"><button type="button" class="btn" value="'+clan.clan_name+'" onclick="btn_click(this)">Вступить</button></div>';
                             leaderboard.appendChild(tableRow);
+                            loader.className += " hidden";
                         }
                     }
                     else{
@@ -57,6 +61,7 @@
                             tableRow.classList.add("table-row");
                             tableRow.innerHTML = '<div class="l-container"><span class="l-username">'+clan.username+'</span><span class="l-rank">'+clan.rank+'</span></div><div class="l-score">'+clan.score+'</div>';
                             leaderboard.appendChild(tableRow);
+                            loader.className += " hidden";
                         }
                     }
                 });
@@ -64,6 +69,7 @@
 
             start()
             function btn_click(clan){
+                loader.className = "loader";
                 let data = {
                     "ids": app.initDataUnsafe.user.id,
                     "clan": clan.value
