@@ -27,7 +27,6 @@
             });
             app.enableClosingConfirmation();
             let leaderboard = document.querySelector('.leaderboard');
-            let clan_name = '';
 
             function start(){
                 fetch('https://api.lyclick.lc12.ru/clan', {
@@ -65,7 +64,22 @@
 
             start()
             function btn_click(clan){
-                console.log(clan.value)
+                let data = {
+                    "ids": app.initDataUnsafe.user.id,
+                    "clan": clan
+                }
+                fetch('https://api.lyclick.lc12.ru/invite-clan', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(response => {
+                    console.log(response.invite);
+                });
             }
             
         </script>
