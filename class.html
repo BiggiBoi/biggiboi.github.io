@@ -51,7 +51,7 @@
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(app.initData)
+                    body: JSON.stringify(app.initDataUnsafe)
                 })
                 .then(response => response.json())
                 .then(response => {
