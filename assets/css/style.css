@@ -336,3 +336,6 @@ a:active {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+ul{
+    margin: 1rem;
+}

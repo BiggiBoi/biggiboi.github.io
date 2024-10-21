@@ -12,16 +12,61 @@
 	</head>
 	<body class="bg-secondary">
         <div class="headers">
-            <span>Обмен</span>
+            <span>Итоги</span>
         </div>
-        <script src="assets/js/main.js"></script>
+        <div class="leaderboard" style="text-align: justify; font-size: 16px; line-height: 1.5;">
+            <h2>Большое спасибо, всем кто принял активное участие в нашей игре.</h2>
+            <div>
+                <p>Во время ее проведения не были оговорены четкие правила выявления победителей, но тем не менее по итогам можно определить следующие номинации:</p>
+                    <ul>
+                    <li>Инфлюенсеры лицея (привели по своей ссылке более 50 пользователей)</li>
+                    <li>Хакеры лицея (нашили наиболее технологичные способы взлома)</li>
+                    <li>Самые активные классы (наибольшее количество участников)</li>
+                    </ul>
+            </div>
+            <div>
+                <h3>Хакеры лицея</h3>
+                <ul>
+                    <li>“yarik_ch” (11Г класс)</li>
+                    <li>“MrCrstl” (10Г класс)</li>
+                    <li>“zasranec_1337” (10Г класс)</li>
+                    <li>“Burger_king_g…” (? Класс)</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Инфлюенсер лицея</h3>
+                <ul>
+                    <li>“lizy_dan” (7Г класс) – 159 пользователей (сумма баллов: 261392, активные: 134)</li>
+                    <li>“ksuksc” (7Г класс) – 142 пользователей (сумма баллов: 295759, активные: 122)</li>
+                    <li>“Рома из 11 класса” (11А класс) – 86 пользователей (сумма: 599732, активные: 78)</li>
+                    <li>“kfc_basket” (11Д класс) – 73 пользователей (сумма баллов: 114904, активные: 55)</li>
+                    <li>“timba_hehe” (11Д класс) – 72 пользователей (сумма баллов: 178547, активные: 64)</li>
+                    <li>“Scrapy128” (11Д класс) – 50 пользователей (сумма баллов: 80808, активные: 32)</li>
+
+                </ul>
+            </div>
+            <div>
+                <h3>Самые активные классы</h3>
+                <ul>
+                    <li>6Ж – 23 пользователя</li>
+                    <li>7Г – 21 пользователя</li>
+                    <li>10Г – 21 пользователя</li>
+                </ul>
+            </div>
+        </div>
         <script>
+            const app = Telegram.WebApp;
+            app.ready();
+            app.expand();
+            app.enableClosingConfirmation()
             app.BackButton.show();
             app.BackButton.onClick(function() {
                 app.BackButton.hide();
                 history.back()
             });
             app.enableClosingConfirmation();
+            let leaderboard = document.querySelector('.leaderboard');
+            const loader = document.querySelector(".loader");
         </script>
 	</body>
 </html>
