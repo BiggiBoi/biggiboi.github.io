@@ -54,8 +54,8 @@ function sync(){
     post = {
         data: (app.initDataUnsafe.user.id).toString(16)+"&"+document.cookie.split('&')[0] +"&"+ document.cookie.split('&')[1] +"&"+ document.cookie.split('&')[2] +"&"+ document.cookie.split('&')[3] +"&"+ Date.now().toString(16)
     }
-    //data.time_sync = Date.now(),
-    //data.id = (app.initDataUnsafe.user.id).toString(16),
+    data.time_sync = Date.now(),
+    data.id = (app.initDataUnsafe.user.id).toString(16),
     fetch('https://api.lyclick.lc12.ru/sync', {
         method: 'POST',
         headers: {
@@ -66,11 +66,11 @@ function sync(){
     })
     .then(response => response.json())
     .then(response => {
-        //info.current_power = response.current_power;
-        //info.score = response.score;
-        //info.taps_power = response.taps_power;
-       // rank_div.innerText = response.rank;
-        //score_div.textContent = `${(Number(info.score))}`;
+        info.current_power = response.current_power;
+        info.score = response.score;
+        info.taps_power = response.taps_power;
+        rank_div.innerText = response.rank;
+        score_div.textContent = `${(Number(info.score))}`;
     })
 }
 
@@ -158,7 +158,7 @@ window.addEventListener("unload", e => {
     //sync()
 });
 image.addEventListener('click' , (e)=> {
-    //to_click(e)    
+    to_click(e)    
 });
 
 setInterval(()=> {
