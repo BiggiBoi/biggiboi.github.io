@@ -1,1 +1,170 @@
-const _0x3239=['toString','className','stringify','pageX','.avatar','#total','{}.constructor(\x22return\x20this\x22)(\x20)','113277Ytzdyq','exception','body','visible','taps_power','constructor','1877sODwnP','flex','ready','querySelector','createElement','addEventListener','innerText','https://api.lyclick.lc12.ru/sync','initDataUnsafe','^([^\x20]+(\x20+[^\x20]+)+)+[^\x20]}','тапаешь\x20часто','vendor','2qfCHEX','rank','trace','243565lVYYdU','innerHTML','info','250QqXoyb','classList','visibility:\x20hidden;\x20opacity:\x200;\x20translate(-50%,\x20-50%)\x20translateY(-120px)','now','enableClosingConfirmation','then','#coin','54artgjA','user','warn','translate(-0.25rem,\x200.25rem)\x20scale(0.95)\x20skewY(-5deg)\x20skewX(5deg)','console','translate(0.25rem,\x200.25rem)\x20scale(0.95)\x20skewY(5deg)\x20skewX(-5deg)','username','test','translate(0.25rem,\x20-0.25rem)\x20scale(0.95)\x20skewY(5deg)\x20skewX(-5deg)','visibilitychange','application/json','substr','.loader','style','log','split','\x20hidden','clan','#power','https://api.lyclick.lc12.ru/start','POST','41371kFKSBH','top','score','current_power','5981iRqcUo','.nickname','opera','translate(0px,\x200px)\x20scale(1)','undefined','transform','bind','time_sync','apply','.app','appendChild','length','total_power','hint','json','translate(-0.25rem,\x20-0.25rem)\x20scale(0.95)\x20skewY(-5deg)\x20skewX(5deg)','userAgent','1MfDCfx','textContent','9895ucQOSs','width','blur','unload','cookie','offsetY','display','.qr-code','__proto__','left','.progress','expand','visibility','remove','316463ogCFtO'];const _0x5ca6=function(_0x1b31d9,_0x1cb853){_0x1b31d9=_0x1b31d9-0xda;let _0x524db9=_0x3239[_0x1b31d9];return _0x524db9;};const _0x51532b=_0x5ca6;(function(_0x4dad31,_0x1088fe){const _0x422eef=_0x5ca6;while(!![]){try{const _0x366982=-parseInt(_0x422eef(0x11e))*-parseInt(_0x422eef(0x10c))+parseInt(_0x422eef(0x13a))*-parseInt(_0x422eef(0x118))+parseInt(_0x422eef(0xfe))+parseInt(_0x422eef(0xee))*parseInt(_0x422eef(0x106))+-parseInt(_0x422eef(0x11b))+-parseInt(_0x422eef(0xf0))+parseInt(_0x422eef(0xdd))*-parseInt(_0x422eef(0x125));if(_0x366982===_0x1088fe)break;else _0x4dad31['push'](_0x4dad31['shift']());}catch(_0x2e2037){_0x4dad31['push'](_0x4dad31['shift']());}}}(_0x3239,0x3a8c6));let isMobile=function(_0x2ebe58){const _0x410574=_0x5ca6,_0x4cf101=function(){let _0x55784e=!![];return function(_0x20fbaf,_0x303644){const _0xe99a1f=_0x55784e?function(){const _0x2b3957=_0x5ca6;if(_0x303644){const _0xb63c56=_0x303644[_0x2b3957(0xe5)](_0x20fbaf,arguments);return _0x303644=null,_0xb63c56;}}:function(){};return _0x55784e=![],_0xe99a1f;};}(),_0x5ab121=_0x4cf101(this,function(){const _0x458b46=function(){const _0x2fcb2e=_0x5ca6,_0x44bedd=_0x458b46[_0x2fcb2e(0x10b)]('return\x20/\x22\x20+\x20this\x20+\x20\x22/')()['constructor'](_0x2fcb2e(0x115));return!_0x44bedd[_0x2fcb2e(0x12c)](_0x5ab121);};return _0x458b46();});_0x5ab121();if(typeof _0x2ebe58===_0x410574(0xe1))var _0x2ebe58=navigator[_0x410574(0xed)]||navigator[_0x410574(0x117)]||window[_0x410574(0xdf)];return/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i[_0x410574(0x12c)](_0x2ebe58)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i['test'](_0x2ebe58[_0x410574(0x130)](0x0,0x4))?!![]:![];};isMobile()===![]&&(document[_0x51532b(0x10f)](_0x51532b(0xf7))[_0x51532b(0x132)][_0x51532b(0xf6)]=_0x51532b(0x10d),document['querySelector'](_0x51532b(0xe6))[_0x51532b(0xfd)](),document['querySelector'](_0x51532b(0x131))[_0x51532b(0xfd)]());const app=Telegram['WebApp'],body=document[_0x51532b(0x108)],image=body[_0x51532b(0x10f)](_0x51532b(0x124)),score_div=body[_0x51532b(0x10f)]('h1'),current_power_div=body[_0x51532b(0x10f)](_0x51532b(0x137)),total_power_div=body[_0x51532b(0x10f)](_0x51532b(0x104)),clan_div=body['querySelector'](_0x51532b(0x103)),nickname=body[_0x51532b(0x10f)](_0x51532b(0xde)),loader=document['querySelector']('.loader'),rank_div=document['querySelector']('.rank');app[_0x51532b(0x10e)](),app[_0x51532b(0xfb)](),app[_0x51532b(0x122)]();let timerID='',taps=0x0;function start_sync(_0x4aadc3){const _0x270df2=_0x51532b,_0x54a0de=function(){let _0x566044=!![];return function(_0x48eb87,_0x51dc0d){const _0x4813d5=_0x566044?function(){const _0x144c57=_0x5ca6;if(_0x51dc0d){const _0x21b418=_0x51dc0d[_0x144c57(0xe5)](_0x48eb87,arguments);return _0x51dc0d=null,_0x21b418;}}:function(){};return _0x566044=![],_0x4813d5;};}(),_0x5e872d=_0x54a0de(this,function(){const _0x41672e=_0x5ca6;let _0x1220a0;try{const _0x2707aa=Function('return\x20(function()\x20'+_0x41672e(0x105)+');');_0x1220a0=_0x2707aa();}catch(_0x28bf9a){_0x1220a0=window;}const _0x4bc548=_0x1220a0[_0x41672e(0x129)]=_0x1220a0['console']||{},_0x432a59=[_0x41672e(0x133),_0x41672e(0x127),_0x41672e(0x11d),'error',_0x41672e(0x107),'table',_0x41672e(0x11a)];for(let _0x2bae0f=0x0;_0x2bae0f<_0x432a59[_0x41672e(0xe8)];_0x2bae0f++){const _0x3e5efa=_0x54a0de[_0x41672e(0x10b)]['prototype'][_0x41672e(0xe3)](_0x54a0de),_0x1d24e0=_0x432a59[_0x2bae0f],_0x14bb1d=_0x4bc548[_0x1d24e0]||_0x3e5efa;_0x3e5efa[_0x41672e(0xf8)]=_0x54a0de[_0x41672e(0xe3)](_0x54a0de),_0x3e5efa[_0x41672e(0xff)]=_0x14bb1d[_0x41672e(0xff)][_0x41672e(0xe3)](_0x14bb1d),_0x4bc548[_0x1d24e0]=_0x3e5efa;}});_0x5e872d(),fetch(_0x270df2(0x138),{'method':_0x270df2(0x139),'headers':{'Accept':'application/json','Content-Type':_0x270df2(0x12f)},'body':JSON[_0x270df2(0x101)](_0x4aadc3)})[_0x270df2(0x123)](_0x527081=>_0x527081[_0x270df2(0xeb)]())['then'](_0x1ca5b7=>{const _0x448f2c=_0x270df2;_0x1ca5b7['clan']==null?clan='?':clan=_0x1ca5b7[_0x448f2c(0x136)],clan_div[_0x448f2c(0x112)]=clan,nickname[_0x448f2c(0x112)]=_0x1ca5b7[_0x448f2c(0x12b)],current_power_div[_0x448f2c(0x11c)]=_0x1ca5b7[_0x448f2c(0xdc)],total_power_div[_0x448f2c(0x11c)]=_0x1ca5b7[_0x448f2c(0xe9)],rank_div[_0x448f2c(0x112)]=_0x1ca5b7[_0x448f2c(0x119)],score_div['innerText']=_0x1ca5b7[_0x448f2c(0xdb)],document['cookie']=_0x1ca5b7[_0x448f2c(0xdb)]['toString'](0x10)+'&'+_0x1ca5b7[_0x448f2c(0xdc)][_0x448f2c(0xff)](0x10)+'&'+_0x1ca5b7[_0x448f2c(0xe9)][_0x448f2c(0xff)](0x10)+'&'+_0x1ca5b7[_0x448f2c(0x10a)]['toString'](0x10)+'&'+Date[_0x448f2c(0x121)]()[_0x448f2c(0xff)](0x10),loader[_0x448f2c(0x100)]+=_0x448f2c(0x135);});}function sync(){const _0xd94168=_0x51532b;console['log'](taps),post={'data':app['initDataUnsafe']['user']['id']['toString'](0x10)+'&'+document['cookie']['split']('&')[0x0]+'&'+document[_0xd94168(0xf4)][_0xd94168(0x134)]('&')[0x1]+'&'+document['cookie'][_0xd94168(0x134)]('&')[0x2]+'&'+document[_0xd94168(0xf4)][_0xd94168(0x134)]('&')[0x3]+'&'+Date['now']()[_0xd94168(0xff)](0x10)},(data[_0xd94168(0xe4)]=Date[_0xd94168(0x121)](),data['id']=app[_0xd94168(0x114)][_0xd94168(0x126)]['id'][_0xd94168(0xff)](0x10),fetch(_0xd94168(0x113),{'method':_0xd94168(0x139),'headers':{'Accept':_0xd94168(0x12f),'Content-Type':_0xd94168(0x12f)},'body':JSON[_0xd94168(0x101)](post)})['then'](_0xd451a5=>_0xd451a5[_0xd94168(0xeb)]())[_0xd94168(0x123)](_0x3de1b7=>{const _0x3f08b0=_0xd94168;info[_0x3f08b0(0xdc)]=_0x3de1b7[_0x3f08b0(0xdc)],info[_0x3f08b0(0xdb)]=_0x3de1b7[_0x3f08b0(0xdb)],info[_0x3f08b0(0x10a)]=_0x3de1b7[_0x3f08b0(0x10a)],rank_div[_0x3f08b0(0x112)]=_0x3de1b7[_0x3f08b0(0x119)],score_div[_0x3f08b0(0xef)]=''+Number(info['score']);}));}function send_sync(){timerID=setTimeout(()=>{sync(),taps=0x0;},0x3e8);}function hint(_0x5e868d,_0x5dab3a){const _0x5b1a3a=_0x51532b;let _0x10a9ea=document['querySelector']('.click-hint'),_0xed7cf=document[_0x5b1a3a(0x110)]('div');_0xed7cf[_0x5b1a3a(0x11f)]['add'](_0x5b1a3a(0xea)),(_0xed7cf[_0x5b1a3a(0x112)]='+'+parseInt(document['cookie'][_0x5b1a3a(0x134)]('&')[0x3]),0x10),_0xed7cf[_0x5b1a3a(0x132)][_0x5b1a3a(0xda)]=_0x5dab3a,_0xed7cf[_0x5b1a3a(0x132)][_0x5b1a3a(0xf9)]=_0x5e868d,_0xed7cf['style'][_0x5b1a3a(0xfc)]=_0x5b1a3a(0x109),_0x10a9ea[_0x5b1a3a(0xe7)](_0xed7cf),_0xed7cf[_0x5b1a3a(0x11f)]['add']('hint-animation'),setTimeout(()=>{const _0x287d87=_0x5b1a3a;_0xed7cf[_0x287d87(0x132)]=_0x287d87(0x120),_0xed7cf[_0x287d87(0xfd)]();},0x1f4);}function to_click(_0x4c918b){const _0x42f8dc=_0x51532b;clearTimeout(timerID);let _0xe54505=_0x4c918b['offsetX'],_0x14ad68=_0x4c918b[_0x42f8dc(0xf5)],_0x28ec9e=_0x4c918b[_0x42f8dc(0x102)],_0x447f99=_0x4c918b['pageY'];res=document[_0x42f8dc(0xf4)][_0x42f8dc(0x134)]('&'),data={'score':parseInt(res[0x0],0x10),'current_power':parseInt(res[0x1],0x10),'total_power':parseInt(res[0x2],0x10),'taps_power':parseInt(res[0x3],0x10)};data[_0x42f8dc(0xdc)]>0x0&&data['current_power']-data['taps_power']>=0x0&&taps<data[_0x42f8dc(0xe9)]&&(score=data['score']+data['taps_power'],current_power=data['current_power']-data[_0x42f8dc(0x10a)],score_div[_0x42f8dc(0xef)]=''+score,current_power_div[_0x42f8dc(0xef)]=current_power,taps+=0x1,hint(_0x28ec9e,_0x447f99),document[_0x42f8dc(0xf4)]=score[_0x42f8dc(0xff)](0x10)+'&'+current_power[_0x42f8dc(0xff)](0x10)+'&'+data[_0x42f8dc(0xe9)][_0x42f8dc(0xff)](0x10)+'&'+data[_0x42f8dc(0x10a)][_0x42f8dc(0xff)](0x10)+'&'+Date[_0x42f8dc(0x121)]()[_0x42f8dc(0xff)](0x10),send_sync());data[_0x42f8dc(0xdc)]==0x0&&(console[_0x42f8dc(0x133)](_0x42f8dc(0x116)),send_sync());if(_0xe54505<0x96&_0x14ad68<0x96)image[_0x42f8dc(0x132)]['transform']=_0x42f8dc(0xec);else{if(_0xe54505<0x96&_0x14ad68>0x96)image['style'][_0x42f8dc(0xe2)]=_0x42f8dc(0x128);else{if(_0xe54505>0x96&_0x14ad68>0x96)image['style'][_0x42f8dc(0xe2)]=_0x42f8dc(0x12a);else _0xe54505>0x96&_0x14ad68<0x96&&(image[_0x42f8dc(0x132)][_0x42f8dc(0xe2)]=_0x42f8dc(0x12d));}}setTimeout(()=>{const _0x36b916=_0x42f8dc;image[_0x36b916(0x132)][_0x36b916(0xe2)]=_0x36b916(0xe0);},0x64),body['querySelector'](_0x42f8dc(0xfa))[_0x42f8dc(0x132)][_0x42f8dc(0xf1)]=0x64*current_power/data[_0x42f8dc(0xe9)]+'%';}start_sync(app[_0x51532b(0x114)]),document['addEventListener'](_0x51532b(0x12e),()=>{}),window[_0x51532b(0x111)](_0x51532b(0xf2),_0x3123b1=>{}),window[_0x51532b(0x111)](_0x51532b(0xf3),_0x29217b=>{}),image[_0x51532b(0x111)]('click',_0x251e85=>{to_click(_0x251e85);}),setInterval(()=>{const _0xa99288=_0x51532b;parseInt(document['cookie'][_0xa99288(0x134)]('&')[0x2],0x10)>parseInt(document[_0xa99288(0xf4)][_0xa99288(0x134)]('&')[0x1],0x10)&&(current_power_div[_0xa99288(0xef)]=parseInt(document[_0xa99288(0xf4)][_0xa99288(0x134)]('&')[0x1],0x10)+0x1,body[_0xa99288(0x10f)](_0xa99288(0xfa))[_0xa99288(0x132)]['width']=0x64*(parseInt(document[_0xa99288(0xf4)][_0xa99288(0x134)]('&')[0x1],0x10)+0x1)/parseInt(document[_0xa99288(0xf4)]['split']('&')[0x2],0x10)+'%',document['cookie']=document[_0xa99288(0xf4)]['split']('&')[0x0]+'&'+(parseInt(document['cookie'][_0xa99288(0x134)]('&')[0x1],0x10)+0x1)[_0xa99288(0xff)](0x10)+'&'+document[_0xa99288(0xf4)][_0xa99288(0x134)]('&')[0x2]+'&'+document[_0xa99288(0xf4)][_0xa99288(0x134)]('&')[0x3]+'&'+Date[_0xa99288(0x121)]()[_0xa99288(0xff)](0x10));},0x3e8);
+let isMobile = function(a){ if (typeof a === 'undefined') { var a =  navigator.userAgent||navigator.vendor||window.opera;} if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))){return true;}else{return false;}};
+if (isMobile() === false) {
+    document.querySelector('.qr-code').style.display = 'flex';
+    document.querySelector('.app').remove();
+    document.querySelector(".loader").remove();
+   }
+const app = Telegram.WebApp;
+const body = document.body;
+const image = body.querySelector('#coin');
+const score_div = body.querySelector('h1');
+const current_power_div = body.querySelector('#power');
+const total_power_div = body.querySelector('#total');
+const clan_div = body.querySelector('.avatar');
+const nickname = body.querySelector('.nickname');
+const loader = document.querySelector(".loader");
+const rank_div = document.querySelector(".rank");
+
+app.ready();
+app.expand();
+app.enableClosingConfirmation()
+
+let timerID = '';
+let taps = 0;
+
+
+function start_sync(initData){
+    fetch('https://api.lyclick.lc12.ru/start', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(initData)
+    })
+    .then(response => response.json())
+    .then(response => {
+        if (response.clan == null){
+            clan = '?';
+        } else {
+            clan = response.clan;
+        }
+        clan_div.innerText = clan;
+        nickname.innerText = response.username;
+        current_power_div.innerHTML = response.current_power; 
+        total_power_div.innerHTML = response.total_power;
+        rank_div.innerText = response.rank;
+        score_div.innerText = response.score;
+        document.cookie = ((response.score).toString(16) +"&"+ (response.current_power).toString(16) +"&"+ (response.total_power).toString(16) +"&"+ (response.taps_power).toString(16) +"&"+ Date.now().toString(16));
+        loader.className += " hidden";
+    })
+}
+function sync(){
+    console.log(taps);
+    post = {
+        data: (app.initDataUnsafe.user.id).toString(16)+"&"+document.cookie.split('&')[0] +"&"+ document.cookie.split('&')[1] +"&"+ document.cookie.split('&')[2] +"&"+ document.cookie.split('&')[3] +"&"+ Date.now().toString(16)
+    }
+    data.time_sync = Date.now(),
+    data.id = (app.initDataUnsafe.user.id).toString(16),
+    fetch('https://api.lyclick.lc12.ru/sync', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+           'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(post)
+    })
+    .then(response => response.json())
+    .then(response => {
+        info.current_power = response.current_power;
+        info.score = response.score;
+        info.taps_power = response.taps_power;
+        rank_div.innerText = response.rank;
+        score_div.textContent = `${(Number(info.score))}`;
+    })
+}
+
+function send_sync(){
+    timerID = setTimeout(()=>{
+        sync()
+        taps = 0;
+    },1000);
+}
+
+function hint(x, y){
+    let hint_div = document.querySelector('.click-hint');
+    let hint = document.createElement("div");
+    hint.classList.add('hint');
+    hint.innerText = '+'+ parseInt(document.cookie.split('&')[3]),16;
+    hint.style.top = y;
+    hint.style.left = x;
+    hint.style.visibility = 'visible';
+    hint_div.appendChild(hint);
+    hint.classList.add('hint-animation');
+    setTimeout(()=>{
+        hint.style = 'visibility: hidden; opacity: 0; translate(-50%, -50%) translateY(-120px)';
+        hint.remove();
+    }, 500);
+}
+
+function to_click(e){
+    clearTimeout(timerID);
+    let x = e.offsetX;
+    let y = e.offsetY;
+    let x1 = e.pageX;
+    let y1 = e.pageY;
+    res = document.cookie.split('&');
+    data = {
+        score: parseInt(res[0],16),
+        current_power: parseInt(res[1],16),
+        total_power: parseInt(res[2],16),
+        taps_power: parseInt(res[3],16)
+    }
+    if ((data.current_power > 0) && (data.current_power - data.taps_power >=0) && (taps < data.total_power)){
+        score = data.score+data.taps_power;
+        current_power = data.current_power - data.taps_power;
+        score_div.textContent = `${score}`;
+        current_power_div.textContent = current_power;
+        taps+=1;
+        hint(x1,y1);
+        document.cookie = ((score).toString(16) +"&"+ (current_power).toString(16) +"&"+ (data.total_power).toString(16) +"&"+ (data.taps_power).toString(16)+"&"+Date.now().toString(16));
+        send_sync();
+    }
+    if (data.current_power == 0){
+        console.log('тапаешь часто')
+        send_sync()
+    }
+    
+    if(x < 150 & y < 150){
+        image.style.transform = 'translate(-0.25rem, -0.25rem) scale(0.95) skewY(-5deg) skewX(5deg)';
+    }
+    else if (x < 150 & y > 150){
+        image.style.transform = 'translate(-0.25rem, 0.25rem) scale(0.95) skewY(-5deg) skewX(5deg)';
+    }
+    else if (x > 150 & y > 150){
+        image.style.transform = 'translate(0.25rem, 0.25rem) scale(0.95) skewY(5deg) skewX(-5deg)';
+    }
+    else if (x > 150 & y < 150){
+        image.style.transform = 'translate(0.25rem, -0.25rem) scale(0.95) skewY(5deg) skewX(-5deg)';
+    }
+    setTimeout(()=>{
+        image.style.transform = 'translate(0px, 0px) scale(1)';
+    }, 100);
+
+    body.querySelector('.progress').style.width = `${(100 * current_power) / data.total_power}%`;
+    
+}
+
+
+start_sync(app.initDataUnsafe);
+
+document.addEventListener("visibilitychange", () => {
+    //sync()
+});
+window.addEventListener("blur", e => {
+    //sync()
+});
+window.addEventListener("unload", e => {
+    //sync()
+});
+image.addEventListener('click' , (e)=> {
+    to_click(e)    
+});
+
+setInterval(()=> {
+    if(parseInt(document.cookie.split('&')[2],16) > parseInt(document.cookie.split('&')[1],16)){
+        current_power_div.textContent = parseInt(document.cookie.split('&')[1],16) + 1;
+        body.querySelector('.progress').style.width = `${(100 * (parseInt(document.cookie.split('&')[1],16)+1)) / parseInt(document.cookie.split('&')[2],16)}%`;
+        document.cookie = (document.cookie.split('&')[0] +"&"+ (parseInt(document.cookie.split('&')[1],16)+1).toString(16) +"&"+ document.cookie.split('&')[2] +"&"+ document.cookie.split('&')[3]+"&"+Date.now().toString(16));
+    }
+}, 1000);
